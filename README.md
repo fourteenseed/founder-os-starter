@@ -15,7 +15,7 @@ Run the local dashboard:
 Then open:
 
 ```text
-http://127.0.0.1:8765/dashboard/
+http://127.0.0.1:8766/dashboard/
 ```
 
 You can also open `dashboard/index.html` directly in a browser.
