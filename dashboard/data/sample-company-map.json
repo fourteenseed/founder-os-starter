@@ -1,0 +1,34 @@
+{
+  "company": "Example Studio",
+  "positioning": "A solo founder building productised services and a small software product.",
+  "active_seeds": [
+    {
+      "name": "Paid delivery",
+      "posture": "protect"
+    },
+    {
+      "name": "Product idea",
+      "posture": "validate"
+    },
+    {
+      "name": "Audience building",
+      "posture": "grow"
+    }
+  ],
+  "tools": [
+    "Claude",
+    "ChatGPT",
+    "Codex",
+    "Perplexity",
+    "Notion"
+  ],
+  "loop": [
+    "Signal",
+    "Judgement",
+    "Commitment",
+    "Execution",
+    "Proof",
+    "Learning",
+    "Revenue"
+  ]
+}

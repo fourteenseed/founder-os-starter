@@ -1,0 +1,10 @@
+.DS_Store
+.env
+.env.*
+node_modules/
+.vscode/
+.idea/
+__pycache__/
+*.log
+private/
+.local/

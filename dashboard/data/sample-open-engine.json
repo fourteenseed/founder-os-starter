@@ -1,0 +1,10 @@
+{
+  "lanes": [
+    "Intake",
+    "Ready",
+    "Running",
+    "Needs founder",
+    "Proof received",
+    "Done"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "checks": [
+    "Sample data present",
+    "Private boundary needs review before publishing",
+    "Token usage is manual sample"
+  ]
+}
