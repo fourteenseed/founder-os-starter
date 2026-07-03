@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Founder OS demo · The green</title>
+<style>
+  :root{
+    --ink:#f5f5f3; --card:#ffffff; --line:#d1d5db; --text:#0b0d10;
+    --muted:#6b7280; --accent:#d63384; --calm:#2f8f5b; --flag:#a5690f;
+    --pad: clamp(30px, 4.5vw, 48px);
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  *{ box-sizing:border-box; min-width:0; }
+  html{ background:var(--ink); }
+  body{ margin:0; font-family:var(--sans); color:var(--text); line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    padding: clamp(28px,5vw,60px) clamp(20px,5vw,56px) clamp(48px,6vw,80px); }
+  .shell{ max-width:1080px; margin:0 auto; display:flex; gap:clamp(28px,4vw,56px); align-items:flex-start; }
+  .rail{ flex:0 0 140px; font-family:var(--mono); font-size:13px; display:flex; flex-direction:column; gap:14px; padding-top:6px; }
+  .rail a{ color:var(--muted); text-decoration:none; }
+  .rail a.here{ color:var(--text); }
+  .rail .chev{ color:var(--accent); }
+  .page{ flex:1; min-width:0; max-width:920px; }
+  .panel{ background:var(--card); border:1px solid var(--line); border-radius:20px; padding:var(--pad); }
+  .panel > :first-child{ margin-top:0; } .panel > :last-child{ margin-bottom:0; }
+  .kicker{ font-family:var(--mono); font-size:12px; font-weight:600; letter-spacing:2px;
+    text-transform:uppercase; color:var(--muted); margin:0 0 18px; }
+  header{ display:flex; align-items:baseline; justify-content:space-between; gap:24px; flex-wrap:wrap; margin:0 0 clamp(36px,5vw,56px); }
+  .wordmark{ font-family:var(--mono); font-weight:600; font-size:15px; }
+  .wordmark .chev{ color:var(--accent); }
+  .os-label{ font-family:var(--mono); font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); }
+  section{ margin:0 0 clamp(36px,5vw,52px); }
+  footer{ padding:0 var(--pad); font-family:var(--mono); font-size:12.5px; color:var(--muted); }
+
+  .week{ display:grid; grid-template-columns:repeat(auto-fit,minmax(118px,1fr)); gap:8px; }
+  .day{ border:1px solid var(--line); border-radius:14px; background:var(--card); padding:12px 11px; min-height:140px; }
+  .day h3{ font-family:var(--mono); font-size:10.5px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--muted); margin:0 0 9px; }
+  .blk{ font-size:11px; line-height:1.4; border-radius:8px; padding:5px 8px; margin-bottom:5px; }
+  .blk.work{ background:var(--ink); border:1px solid var(--line); }
+  .blk.life{ border:1px solid var(--calm); color:var(--calm); }
+  .blk.study{ border:1px solid var(--accent); color:var(--accent); }
+  .blk.off{ border:1px dashed var(--line); color:var(--muted); }
+  .duo{ display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:14px; }
+  .duo .panel{ padding:calc(var(--pad)*.6); }
+  .duo h3{ font-family:var(--mono); font-size:12px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); margin:0 0 14px; }
+  .duo p{ font-size:13.5px; margin:0 0 10px; line-height:1.6; } .duo p:last-child{ margin-bottom:0; }
+  .charter{ border-color:var(--calm); } .charter h3{ color:var(--calm); }
+  .charter p{ padding-left:18px; position:relative; }
+  .charter p::before{ content:""; position:absolute; left:0; top:.55em; width:7px; height:7px; border-radius:999px; background:var(--calm); }
+</style></head><body><div class="shell">
+  <nav class="rail">
+    <a href="the-floor.html">The floor</a>
+    <a href="the-green.html" class="here"><span class="chev">&gt;&gt;</span> The green</a>
+    <a href="the-engine.html">The engine</a>
+    <a>The work</a>
+    <a>The rota</a>
+    <a>The skills</a>
+    <a>The brain</a>
+    <a>The flow</a>
+    <a>The broadcast</a>
+    <a>The estate</a>
+    <a>The connection</a>
+  </nav>
+  <div class="page">
+    <header>
+      <div class="wordmark">sample <span class="chev">&gt;&gt;</span> studio</div>
+      <div class="os-label">Founder OS · demo</div>
+    </header>
+    <section>
+      <p class="kicker" style="padding:0 6px;">The green · the week as a human week</p>
+      <div class="week">
+        <div class="day"><h3>Mon</h3><div class="blk work">Harbourview · delivery</div><div class="blk off">evening · yours</div></div>
+        <div class="day"><h3>Tue</h3><div class="blk work">product build</div><div class="blk life">school run · 3:30</div></div>
+        <div class="day"><h3>Wed</h3><div class="blk work">Harbourview · delivery</div><div class="blk life">five-a-side · 6pm</div></div>
+        <div class="day"><h3>Thu</h3><div class="blk work">client call · 11:00</div><div class="blk study">cohort call · 7pm</div></div>
+        <div class="day"><h3>Fri</h3><div class="blk work">the weekly brief · 07:30</div><div class="blk off">afternoon · open</div></div>
+        <div class="day"><h3>Sat</h3><div class="blk off">off campus</div><div class="blk life">family</div></div>
+        <div class="day"><h3>Sun</h3><div class="blk off">off campus</div><div class="blk life">allotment, if the fun strikes</div></div>
+      </div>
+      <p style="font-size:13px; color:var(--muted); margin:14px 4px 0;">Read from the real calendar. Life shows as markers; the detail stays in the personal lane.</p>
+    </section>
+    <section><div class="duo">
+      <div class="panel"><h3>The study · your own learning</h3>
+        <p><strong>Certification</strong> <span style="color:var(--muted)">— exam booked for September; two modules left.</span></p>
+        <p><strong>The cohort</strong> <span style="color:var(--muted)">— Thursday evening calls; six of you, all building.</span></p>
+      </div>
+      <div class="panel charter"><h3>The charter · how this OS protects its human</h3>
+        <p>The chief of staff filters. You read one brief, not forty outputs.</p>
+        <p>The agents work mornings so your evenings stay yours.</p>
+        <p>Protected time is load-bearing, not leftover.</p>
+        <p>Family lives in the family lane. Clients never see it.</p>
+      </div>
+    </div></section>
+    <footer>Compiled Thursday 6 August from the live calendar — demo data, a fictional studio</footer>
+  </div>
+</div></body></html>

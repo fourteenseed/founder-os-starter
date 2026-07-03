@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Founder OS demo · The floor</title>
+<style>
+  :root{
+    --ink:#f5f5f3; --card:#ffffff; --line:#d1d5db; --text:#0b0d10;
+    --muted:#6b7280; --accent:#d63384; --calm:#2f8f5b; --flag:#a5690f;
+    --pad: clamp(30px, 4.5vw, 48px);
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  *{ box-sizing:border-box; min-width:0; }
+  html{ background:var(--ink); }
+  body{ margin:0; font-family:var(--sans); color:var(--text); line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    padding: clamp(28px,5vw,60px) clamp(20px,5vw,56px) clamp(48px,6vw,80px); }
+  .shell{ max-width:1080px; margin:0 auto; display:flex; gap:clamp(28px,4vw,56px); align-items:flex-start; }
+  .rail{ flex:0 0 140px; font-family:var(--mono); font-size:13px; display:flex; flex-direction:column; gap:14px; padding-top:6px; }
+  .rail a{ color:var(--muted); text-decoration:none; }
+  .rail a.here{ color:var(--text); }
+  .rail .chev{ color:var(--accent); }
+  .page{ flex:1; min-width:0; max-width:920px; }
+  .panel{ background:var(--card); border:1px solid var(--line); border-radius:20px; padding:var(--pad); }
+  .panel > :first-child{ margin-top:0; } .panel > :last-child{ margin-bottom:0; }
+  .kicker{ font-family:var(--mono); font-size:12px; font-weight:600; letter-spacing:2px;
+    text-transform:uppercase; color:var(--muted); margin:0 0 18px; }
+  header{ display:flex; align-items:baseline; justify-content:space-between; gap:24px; flex-wrap:wrap; margin:0 0 clamp(36px,5vw,56px); }
+  .wordmark{ font-family:var(--mono); font-weight:600; font-size:15px; }
+  .wordmark .chev{ color:var(--accent); }
+  .os-label{ font-family:var(--mono); font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); }
+  section{ margin:0 0 clamp(36px,5vw,52px); }
+  footer{ padding:0 var(--pad); font-family:var(--mono); font-size:12.5px; color:var(--muted); }
+
+  .next-move .move{ font-size:clamp(30px,4.6vw,50px); font-weight:650; line-height:1.22; letter-spacing:-0.015em; margin:0; }
+  .move-meta{ margin:20px 0 0; font-size:14px; color:var(--muted); }
+  .zora{ margin-top:22px; }
+  .zora .who{ font-family:var(--mono); font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); margin:0 0 10px; }
+  .zora .who .chev{ color:var(--accent); text-transform:none; }
+  .zora .line{ font-size:17px; margin:0; }
+  .floor{ display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:14px; margin-top:14px; }
+  .desk{ background:var(--card); border:1px solid var(--line); border-radius:20px; padding:calc(var(--pad)*.72); }
+  .desk.head{ grid-column:1/-1; padding:var(--pad); display:flex; align-items:baseline; justify-content:space-between; gap:18px; flex-wrap:wrap; }
+  .agent-name{ font-weight:650; font-size:16px; margin:0; }
+  .agent-role{ color:var(--muted); font-size:13.5px; margin:2px 0 14px; }
+  .desk.head .agent-role{ margin-bottom:0; }
+  .ran{ display:flex; align-items:center; gap:10px; font-size:14px; color:var(--muted); margin:0; }
+  .dot{ width:7px; height:7px; border-radius:999px; flex:none; background:var(--muted); }
+  .dot.fresh{ background:var(--calm); } .dot.stale{ background:var(--flag); }
+  .ran.stale{ color:var(--flag); }
+</style></head><body><div class="shell">
+  <nav class="rail">
+    <a href="the-floor.html" class="here"><span class="chev">&gt;&gt;</span> The floor</a>
+    <a href="the-green.html">The green</a>
+    <a href="the-engine.html">The engine</a>
+    <a>The work</a>
+    <a>The rota</a>
+    <a>The skills</a>
+    <a>The brain</a>
+    <a>The flow</a>
+    <a>The broadcast</a>
+    <a>The estate</a>
+    <a>The connection</a>
+  </nav>
+  <div class="page">
+    <header>
+      <div class="wordmark">sample <span class="chev">&gt;&gt;</span> studio</div>
+      <div class="os-label">Founder OS · demo</div>
+    </header>
+    <section><div class="panel next-move">
+      <p class="kicker">The next move</p>
+      <h1 class="move">Send the Harbourview proposal before Thursday's call</h1>
+      <p class="move-meta">Top revenue lane · goes stale after 9 August</p>
+      <div class="zora">
+        <p class="who">Vale <span class="chev">&gt;&gt;</span> chief of staff</p>
+        <p class="line">The proposal draft is on my desk, briefed and ready. I'm waiting on your go.</p>
+      </div>
+    </div></section>
+    <section>
+      <p class="kicker" style="padding:0 var(--pad); margin-bottom:4px;">The floor · did they show up</p>
+      <div class="floor">
+        <div class="desk head"><div><p class="agent-name">Vale</p><p class="agent-role">chief of staff · Fridays, 07:30</p></div><p class="ran"><span class="dot fresh"></span>ran today</p></div>
+        <div class="desk"><p class="agent-name">Juno</p><p class="agent-role">daily digest · runs daily</p><p class="ran"><span class="dot fresh"></span>ran today</p></div>
+        <div class="desk"><p class="agent-name">Felix</p><p class="agent-role">market watch · runs twice a week</p><p class="ran"><span class="dot fresh"></span>ran yesterday</p></div>
+        <div class="desk"><p class="agent-name">Nell</p><p class="agent-role">follow-ups · runs twice a week</p><p class="ran stale"><span class="dot stale"></span>hasn't run since Monday</p></div>
+        <div class="desk"><p class="agent-name">Otis</p><p class="agent-role">site watch · runs weekly</p><p class="ran"><span class="dot fresh"></span>ran 2 days ago</p></div>
+        <div class="desk"><p class="agent-name">Wren</p><p class="agent-role">event radar · runs weekly</p><p class="ran stale"><span class="dot stale"></span>hasn't run since 24 July</p></div>
+        <div class="desk"><p class="agent-name">Piet</p><p class="agent-role">newsletter ideas · runs Sundays</p><p class="ran"><span class="dot"></span>no run recorded</p></div>
+      </div>
+    </section>
+    <footer><span style="color:var(--accent)">●</span> Live. Data refreshed Thursday 6 August at 12:00. — demo data, a fictional studio</footer>
+  </div>
+</div></body></html>

@@ -24,6 +24,22 @@ That's it. The agent gets its instructions from [AGENTS.md](AGENTS.md); you get 
 
 The whole thing runs on one analogy. Your AI tools are buildings on a campus, each with its own faculty: one is better at reasoning and writing, one at code, one at research. Your agents are colleagues, not buildings; a colleague works in a building but isn't owned by it. A keycard is a connection plus a permission, and some doors (send, publish, spend) open only with your signature at the gatehouse. Your memory is the library and your procedures are the workshop: two pillars every building connects to, so nothing is trapped where it was made. And at the centre of the campus is the green, the open space where you are not in any building at all, because a founder OS that can't see your Wednesday badminton will schedule over it forever.
 
+## What it looks like
+
+Three of the rooms, with demo data for a fictional studio. The pages themselves are in [demo/](demo/) — download the repo and open them in any browser, nothing to install.
+
+**The floor** — did my agents show up today? The next move at the top, one line from the chief of staff, and every agent at a named desk with an honest last-ran read.
+
+![The floor](assets/demo-the-floor.png)
+
+**The green** — the week as a human week. Work blocks, life markers, protected time drawn as first-class blocks, and the charter: the rules the system obeys about its human.
+
+![The green](assets/demo-the-green.png)
+
+**The engine** — what waits on a human, what's in motion, and receipts for what the agents proved. It points at the real task board; it never duplicates it.
+
+![The engine](assets/demo-the-engine.png)
+
 ## The rooms at a glance
 
 | Room | The one question it answers |
