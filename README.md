@@ -62,7 +62,9 @@ Every room obeys the same [honesty rules](principles/honesty-rules.md), and they
 
 Built in the open in Cornwall, mostly by talking to an agent over a couple of days, standing on the shoulders of people who shared their working generously. The concepts this borrows and what was changed are credited properly in [principles/credits.md](principles/credits.md): Nate B. Jones's Open Brain, Open Skills, and Open Engine; Ankit Patel's architecture thinking; and the Exec Circle community around them. The campus metaphor, the honesty rules, and the green are the parts I'd claim as mine.
 
-If you build your own version, I'd genuinely like to see it. wendy@fourteenseed.com
+## Feeding back
+
+This repo exists because people shared their working, so the same applies here. If something is unclear, wrong, or missing, open an issue and say so plainly; blunt is welcome. If you build your own corner, I'd genuinely like to see it, and with your permission I'll link a small gallery of other people's versions here so the map keeps travelling. wendy@fourteenseed.com
 
 Wendy Harris, Fourteen Seed
 Cornwall >> internet
