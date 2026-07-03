@@ -1,41 +1,56 @@
-# Founder OS Starter
+# Founder OS
 
-Founder OS Starter is a local-first cockpit for founders using multiple AI tools. It helps connect business context, decisions, tasks, reusable skills, AI usage and proof of progress, so AI becomes part of an operating rhythm rather than a collection of disconnected chats.
+A calm command centre for a founder who works with more than one AI tool.
 
-This repository is a public-safe starter pattern. It uses invented sample data and plain dashboard views so you can see how the system fits together before connecting your own notes, tools or automations.
+I used to run an office of fourteen people. I could look up from my desk and see who was working on what, and know what I could hand off. When I started building with AI agents, I missed that more than anything: the work was happening, but I couldn't see it. Outputs piled up in chat windows. Schedulers broke silently. I couldn't tell you which agent had shown up that morning, and I was the one carrying every piece of work between the tools.
 
-## Start here
+Founder OS is the office I built to fix that. Eleven rooms, each answering exactly one question, all of it running on data that is allowed to say "I don't know". This repo is the vanilla version: the pattern with my private data removed, so you can build your own.
 
-Run the local dashboard:
+## Who this is for
 
-```bash
-./scripts/serve-local.sh
-```
+Founders and operators who use several AI tools at once (Claude and ChatGPT and a local agent and whatever arrives next month) and can feel it getting messy. If you live happily inside one tool, you don't need this. If you've become the courier between five of them, you might.
 
-Then open:
+You don't need to be a developer. I'm not, in the traditional sense. The intended way to use this repo is the way you're probably already working: read this page yourself, then point your AI agent at the rest and build together.
 
-```text
-http://127.0.0.1:8766/dashboard/
-```
+## How to use this repo
 
-You can also open `dashboard/index.html` directly in a browser.
+Say this to whichever AI agent you work with:
 
-## Dashboard views
+> Read llms.txt and AGENTS.md in this repo, then help me plan my own Founder OS. Interview me first.
 
-- **Company map**: the whole business as a living system.
-- **Daily brief**: what changed, what matters and what needs a decision.
-- **Open Engine**: the visible work layer for human tasks, AI tasks, handoffs and receipts.
-- **Open Skills**: reusable runbooks, prompts and methods.
-- **Token usage**: where AI effort is going, what it costs and what value comes back.
-- **Proof log**: what actually changed, shipped, sold, followed up or improved.
-- **System health**: what is stale, missing or ready for attention.
+That's it. The agent gets its instructions from [AGENTS.md](AGENTS.md); you get a conversation about your own setup rather than a pile of files to decode.
 
-## Core loop
+## The campus, in one paragraph
 
-```text
-Signal -> judgement -> commitment -> execution -> proof -> learning -> revenue
-```
+The whole thing runs on one analogy. Your AI tools are buildings on a campus, each with its own faculty: one is better at reasoning and writing, one at code, one at research. Your agents are colleagues, not buildings; a colleague works in a building but isn't owned by it. A keycard is a connection plus a permission, and some doors (send, publish, spend) open only with your signature at the gatehouse. Your memory is the library and your procedures are the workshop: two pillars every building connects to, so nothing is trapped where it was made. And at the centre of the campus is the green, the open space where you are not in any building at all, because a founder OS that can't see your Wednesday badminton will schedule over it forever.
 
-## Public-safe boundary
+## The rooms at a glance
 
-This starter deliberately uses generic sample data. Do not put private client detail, family material, raw transcripts, mailbox content, passwords, financial information or unfinished judgement about real people into a public fork.
+| Room | The one question it answers |
+|---|---|
+| [The floor](rooms/01-the-floor.md) | Did my agents show up today? |
+| [The green](rooms/02-the-green.md) | What does my week look like as a human, not a machine? |
+| [The engine](rooms/03-the-engine.md) | What work is moving, and what waits on me? |
+| [The work](rooms/04-the-work.md) | Where do I sit down and do the job? |
+| [The rota](rooms/05-the-rota.md) | When does everything run, and on whose meter? |
+| [The skills](rooms/06-the-skills.md) | How is work done here, and is it owned or rented? |
+| [The brain](rooms/07-the-brain.md) | What does my system remember, and is it healthy? |
+| [The flow](rooms/08-the-flow.md) | How does data move through my whole stack? |
+| [The broadcast](rooms/09-the-broadcast.md) | What am I saying to the world, and on which frequency? |
+| [The estate](rooms/10-the-estate.md) | Are my public websites in good order, for people and for agents? |
+| [The connection](rooms/11-the-connection.md) | What does all of this mean, and what's worth writing about? |
+
+Read them in that order and you'll walk my daily loop first (floor, green, engine, work), then the reference rooms, then the outward-facing ones. The connection comes last on purpose: it's the room that joins the dots.
+
+## The rules underneath
+
+Every room obeys the same [honesty rules](principles/honesty-rules.md), and they're the actual product. The short version: never fabricate a signal, label every placeholder, one timestamp one truth, silence beats filler, and busyness is not progress. My first version of this dashboard died because it broke those rules. This one has held because it can't.
+
+## Where it came from
+
+Built in the open in Cornwall, mostly by talking to an agent over a couple of days, standing on the shoulders of people who shared their working generously. The concepts this borrows and what was changed are credited properly in [principles/credits.md](principles/credits.md): Nate B. Jones's Open Brain, Open Skills, and Open Engine; Ankit Patel's architecture thinking; and the Exec Circle community around them. The campus metaphor, the honesty rules, and the green are the parts I'd claim as mine.
+
+If you build your own version, I'd genuinely like to see it. wendy@fourteenseed.com
+
+Wendy Harris, Fourteen Seed
+Cornwall >> internet
