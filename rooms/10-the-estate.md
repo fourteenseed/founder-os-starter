@@ -14,4 +14,4 @@
 
 **Inspired by / changed.** Original room, with a finding worth sharing: the original's own studio site: an AI consultancy's site: was the least agent-readable property it owned. Fixed the same afternoon, and the before-and-after became content.
 
-**Building yours.** Your agent can run the basic audit in minutes: fetch each site, check the six basics, mind the false-200s from SPA catch-alls. The job sheet makes it actionable instead of a report.
+**Building yours.** Your agent can run the basic audit in minutes: fetch each of your websites and check the six basics (title and description, structured data, social cards, robots.txt, sitemap.xml, llms.txt), minding the false positives from sites that answer every request with the same page. Most fixes are an afternoon of agent work on the site's repo; the audit makes them a job sheet instead of a vague worry. The job sheet makes it actionable instead of a report.

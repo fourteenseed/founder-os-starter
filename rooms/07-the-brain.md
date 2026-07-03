@@ -14,4 +14,4 @@
 
 **Inspired by / changed.** The memory store itself follows Nate B. Jones's Open Brain (portable memory, outside any one tool). The health inspection, the aperture, and the who-feeds-it split are the additions; the original's first inspection found its intake had silently narrowed for a fortnight because one route paused.
 
-**Building yours.** Needs an actual memory store first; skip this room until one exists. The aperture is the highest-value section: make every route deliberate and visible, so narrowing is a choice, never an accident.
+**Building yours.** Needs an actual memory store first; skip this room until one exists. The original follows Nate B. Jones's Open Brain (a database the agents capture thoughts into, with topics and people attached), but the room doesn't care which system you use: a Notion database, an Obsidian vault, or any store your agent can read, write, and count will do. Follow whichever memory system works for you; the health inspection applies to all of them. The aperture is the highest-value section: make every route deliberate and visible, so narrowing is a choice, never an accident.

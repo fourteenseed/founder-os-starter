@@ -14,4 +14,4 @@
 
 **Inspired by / changed.** This is Nate B. Jones's Open Skills: skills as portable, inspectable work packages living in git, owned by you rather than rented from whichever app you built them in. The shelf-by-usage view and the chain visualisation are the additions.
 
-**Building yours.** Skills live in a git repo as markdown, one folder each, with trigger, boundary, and proof. Promote a repeated workflow to a skill only after it's been useful three times; a library that promotes every passing preference becomes the prompt pile it replaced.
+**Building yours.** Skills live in a git repo as markdown, one folder each, with trigger, boundary, and proof; tools like Claude read them from a skills folder (`~/.claude/skills` locally), and the git copy stays canonical so every tool gets the same procedure. Promote a repeated workflow to a skill only after it's been useful three times; a library that promotes every passing preference becomes the prompt pile it replaced.

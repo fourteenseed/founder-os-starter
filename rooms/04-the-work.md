@@ -14,4 +14,4 @@
 
 **Inspired by / changed.** The bench pattern is original; the closeout discipline borrows from session-closeout practices shared in Nate's community. The personal project gets a deliberately gentler bench: no client updates, no deadlines.
 
-**Building yours.** Start with three prompts: morning pickup, evening closeout, update draft. The closeout is the sleeper hit; it creates the very activity data the rest of the OS wishes existed.
+**Building yours.** Start with three prompts: morning pickup, evening closeout, update draft. They're plain text with a copy button; you paste them into whichever tool you're working in that day (Claude, ChatGPT, anywhere), and each one names the folder or board where its output should land, so the results are findable tomorrow. The closeout is the sleeper hit; it creates the very activity data the rest of the OS wishes existed.

@@ -14,4 +14,4 @@
 
 **Inspired by / changed.** Original room; the cost-lane framing answers the question every multi-tool user asks ("is it cheaper to run agents at night?") honestly: no provider prices by time of day; the real economics are subscription windows, batch APIs, and free local scripts.
 
-**Building yours.** Get trigger times from the scheduler's own records. If your agents cluster before your working day, you'll see your capacity is protected; if they don't, you'll see why your quota vanishes by lunch.
+**Building yours.** Get trigger times from the scheduler's own records: Claude's scheduled-task registry, your crontab, Task Scheduler, wherever the triggers actually live. The original found its task files claiming 5am while the scheduler fired at 8; only the registry tells the truth. If your agents cluster before your working day, you'll see your capacity is protected; if they don't, you'll see why your quota vanishes by lunch.

@@ -14,4 +14,4 @@
 
 **Inspired by / changed.** The frequencies framing is original (the builder's father was a radio operator; it shows). The voice-skill discipline (a blocklist of AI tells, and a required only-you-know detail in every piece) grew from a real reader saying she could spot AI-written email instantly.
 
-**Building yours.** Start with the desk's three prompts and one frequency. The voice skill matters more than the page: build it from writing you actually kept, not from anyone's list of nice phrases.
+**Building yours.** This room is literally about pushing content out: blog posts, LinkedIn, a newsletter, Instagram, YouTube, whichever channels fit the business you run. The mechanics: a drafting prompt writes in your voice and places the result in a scheduling tool (Buffer or similar) as a draft; a review prompt shows you what's pending and schedules only what you approve; a logging prompt records what actually went out. Start with the desk's three prompts and one frequency, on the one channel you already use. The voice skill matters more than the page: build it from writing you actually kept, not from anyone's list of nice phrases.

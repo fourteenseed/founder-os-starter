@@ -14,4 +14,4 @@
 
 **Inspired by / changed.** The genuinely original room. Its trick is emotional: naming agents as people makes staleness feel like a colleague you haven't seen, which makes you actually investigate.
 
-**Building yours.** Start here. One honest data source (agent output files, a scheduler log), one page, recomputed ages at view time. A silent scheduler failure was found on day one of the original because this page existed; expect yours to earn its keep the same way.
+**Building yours.** Start here. One honest data source, one page, recomputed ages at view time. Concretely: if you use Claude's scheduled tasks, each run writes dated output files, and those file dates are your floor; a cron job's log or an output folder works the same way. The original compiles them into one small JSON a few times a day and the page reads that. A silent scheduler failure was found on day one of the original because this page existed; expect yours to earn its keep the same way.

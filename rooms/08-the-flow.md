@@ -14,4 +14,4 @@
 
 **Inspired by / changed.** Directly descended from Ankit Patel's AI Architecture deep dive (tier every surface, bound every brain, prove every output, draw it in layers). The change is the metaphor: his layers became a place, because a place is walkable and a diagram is not.
 
-**Building yours.** Draw yours with your agent in an afternoon. The keycard register alone is worth it: most people have never seen their own permission model.
+**Building yours.** Draw yours with your agent in an afternoon: list every tool you touch in a week (the buildings), every connector each agent holds (the keycards), and where outputs land (the record office). It's a map of things you already have, which is why it's quick. The keycard register alone is worth it: most people have never seen their own permission model.

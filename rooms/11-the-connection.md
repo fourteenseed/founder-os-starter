@@ -14,4 +14,4 @@
 
 **Inspired by / changed.** Original, and the youngest room of the original build: expected to evolve. Its founding insight: if you build an office of humans and agents, you are living inside the best primary source you'll ever have on how humans and agents work together.
 
-**Building yours.** Start with a spine sentence and a hand-captured field note when something real happens. An automated listener can come later, after your hand knows what a good note is.
+**Building yours.** Start with a spine sentence and a hand-captured field note when something real happens; notes are dated markdown files in one folder, and the best ones become the posts, newsletter editions, and talks the broadcast sends out. An automated listener can come later, after your hand knows what a good note is. An automated listener can come later, after your hand knows what a good note is.

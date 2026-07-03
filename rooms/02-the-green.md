@@ -14,4 +14,4 @@
 
 **Inspired by / changed.** Original to this OS, and the room most systems never build. The insight came from the builder's own life already containing the green: weekly sport, weekend writing marked "own pace, no pressure"; and the OS simply never having looked.
 
-**Building yours.** Read the actual calendar; don't declare an idealised week. The two honest flags it produced on day one; a workshop missing from the calendar, work days never calendared at all; are typical, and exactly the point: the system can't protect what it can't see.
+**Building yours.** Read the actual calendar; don't declare an idealised week. Concretely: a Google Calendar or Apple Calendar connector lets your agent pull the week and compile it into the page's data file; if you keep separate work and family calendars, even better, because the family lane can stay markers-only by design. The two honest flags it produced on day one; a workshop missing from the calendar, work days never calendared at all; are typical, and exactly the point: the system can't protect what it can't see.
