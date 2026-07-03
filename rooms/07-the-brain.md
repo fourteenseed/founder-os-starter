@@ -2,6 +2,10 @@
 
 **The question it answers:** What does my system remember, and is it healthy?
 
+![the brain — demo](../assets/demo-the-brain.png)
+
+*The pulse of the memory store, and the aperture: every input medium with its capture route marked routed, by hand, or honestly no route.*
+
 **The analogy.** The library — and its health inspection. Every campus has one; almost nobody checks whether the catalogue is rotting.
 
 **What's on the page.** The pulse: how many memories, since when, last capture, recent rhythm. The themes it holds. Who feeds it (agents provide bulk; the human's rare entries are the valuable ones). The aperture: every input medium — newsletters, meetings, email, working sessions, listening — with its capture route marked routed, by hand, paused, or no route. Trend and drift. Health flags (split tags, unused types). And a resonance strip: what the memory predicted about your life.

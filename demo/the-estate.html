@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Founder OS demo · The estate</title>
+<style>
+  :root{
+    --ink:#f5f5f3; --card:#ffffff; --line:#d1d5db; --text:#0b0d10;
+    --muted:#6b7280; --accent:#d63384; --calm:#2f8f5b; --flag:#a5690f;
+    --pad: clamp(30px, 4.5vw, 48px);
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  *{ box-sizing:border-box; min-width:0; }
+  html{ background:var(--ink); }
+  body{ margin:0; font-family:var(--sans); color:var(--text); line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    padding: clamp(28px,5vw,60px) clamp(20px,5vw,56px) clamp(48px,6vw,80px); }
+  .shell{ max-width:1080px; margin:0 auto; display:flex; gap:clamp(28px,4vw,56px); align-items:flex-start; }
+  .rail{ flex:0 0 140px; font-family:var(--mono); font-size:13px; display:flex; flex-direction:column; gap:14px; padding-top:6px; }
+  .rail a{ color:var(--muted); text-decoration:none; }
+  .rail a.here{ color:var(--text); }
+  .rail .chev{ color:var(--accent); }
+  .page{ flex:1; min-width:0; max-width:920px; }
+  .panel{ background:var(--card); border:1px solid var(--line); border-radius:20px; padding:var(--pad); }
+  .panel > :first-child{ margin-top:0; } .panel > :last-child{ margin-bottom:0; }
+  .kicker{ font-family:var(--mono); font-size:12px; font-weight:600; letter-spacing:2px;
+    text-transform:uppercase; color:var(--muted); margin:0 0 18px; }
+  header{ display:flex; align-items:baseline; justify-content:space-between; gap:24px; flex-wrap:wrap; margin:0 0 clamp(36px,5vw,56px); }
+  .wordmark{ font-family:var(--mono); font-weight:600; font-size:15px; }
+  .wordmark .chev{ color:var(--accent); }
+  .os-label{ font-family:var(--mono); font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); }
+  section{ margin:0 0 clamp(36px,5vw,52px); }
+  footer{ padding:0 var(--pad); font-family:var(--mono); font-size:12.5px; color:var(--muted); }
+
+  .phead{ display:flex; align-items:baseline; justify-content:space-between; gap:16px; flex-wrap:wrap; margin:0 0 6px; }
+  .phead h2{ font-family:var(--mono); font-size:16px; font-weight:650; margin:0; }
+  .verdict{ font-family:var(--mono); font-size:11.5px; color:var(--flag); }
+  .verdict.good{ color:var(--calm); }
+  .role{ font-size:13px; color:var(--muted); margin:0 0 18px; }
+  .checks{ display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:8px 20px; margin:0 0 20px; }
+  .check{ display:flex; align-items:baseline; gap:9px; font-size:13px; padding:7px 0; border-bottom:1px solid var(--line); }
+  .check i{ width:7px; height:7px; border-radius:999px; flex:none; position:relative; top:-1px; font-style:normal; }
+  .check i.ok{ background:var(--calm); } .check i.fl{ background:var(--flag); }
+  .check small{ color:var(--muted); }
+  .job{ display:flex; align-items:baseline; gap:12px; padding:9px 0; border-top:1px solid var(--line); font-size:13.5px; }
+  .job:first-of-type{ border-top:none; }
+  .job .o{ font-family:var(--mono); font-size:10.5px; flex:none; border:1px solid var(--line); border-radius:999px; padding:3px 10px; color:var(--muted); }
+  .jobs h4{ font-family:var(--mono); font-size:11px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); margin:0 0 10px; }
+</style></head><body><div class="shell">
+  <nav class="rail">
+    <a href="the-floor.html">The floor</a>
+    <a href="the-green.html">The green</a>
+    <a href="the-engine.html">The engine</a>
+    <a href="the-work.html">The work</a>
+    <a href="the-rota.html">The rota</a>
+    <a href="the-skills.html">The skills</a>
+    <a href="the-brain.html">The brain</a>
+    <a href="the-flow.html">The flow</a>
+    <a href="the-broadcast.html">The broadcast</a>
+    <a href="the-estate.html" class="here"><span class="chev">&gt;&gt;</span> The estate</a>
+    <a href="the-connection.html">The connection</a>
+  </nav>
+  <div class="page">
+    <header>
+      <div class="wordmark">sample <span class="chev">&gt;&gt;</span> studio</div>
+      <div class="os-label">Founder OS · demo</div>
+    </header>
+
+    <p class="kicker" style="padding:0 6px;">The estate · the public buildings</p>
+    <section><div class="panel">
+      <div class="phead"><h2>samplestudio.com</h2><span class="verdict">strong copy · weak plumbing</span></div>
+      <p class="role">The canonical you. The words are good; the machine layer is missing — an AI studio's site should be readable by agents.</p>
+      <div class="checks">
+        <div class="check"><i class="ok"></i><span>Title, description, h1 <small>· well written</small></span></div>
+        <div class="check"><i class="fl"></i><span>Structured data <small>· none</small></span></div>
+        <div class="check"><i class="fl"></i><span>llms.txt <small>· 404</small></span></div>
+        <div class="check"><i class="ok"></i><span>Social cards <small>· present</small></span></div>
+        <div class="check"><i class="fl"></i><span>sitemap.xml <small>· 404</small></span></div>
+        <div class="check"><i class="ok"></i><span>robots.txt <small>· fine</small></span></div>
+      </div>
+      <div class="jobs"><h4>The job sheet · handoffs</h4>
+        <div class="job"><span class="o">agent · small</span><span>Add structured data and the agent-files to the current site — an afternoon, no rebuild</span></div>
+        <div class="job"><span class="o">you + agent</span><span>The proper rebuild, when the writing archive needs a home</span></div>
+      </div>
+    </div></section>
+
+    <footer>demo data — a fictional studio</footer>
+  </div>
+</div></body></html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Founder OS demo · The skills</title>
+<style>
+  :root{
+    --ink:#f5f5f3; --card:#ffffff; --line:#d1d5db; --text:#0b0d10;
+    --muted:#6b7280; --accent:#d63384; --calm:#2f8f5b; --flag:#a5690f;
+    --pad: clamp(30px, 4.5vw, 48px);
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  *{ box-sizing:border-box; min-width:0; }
+  html{ background:var(--ink); }
+  body{ margin:0; font-family:var(--sans); color:var(--text); line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    padding: clamp(28px,5vw,60px) clamp(20px,5vw,56px) clamp(48px,6vw,80px); }
+  .shell{ max-width:1080px; margin:0 auto; display:flex; gap:clamp(28px,4vw,56px); align-items:flex-start; }
+  .rail{ flex:0 0 140px; font-family:var(--mono); font-size:13px; display:flex; flex-direction:column; gap:14px; padding-top:6px; }
+  .rail a{ color:var(--muted); text-decoration:none; }
+  .rail a.here{ color:var(--text); }
+  .rail .chev{ color:var(--accent); }
+  .page{ flex:1; min-width:0; max-width:920px; }
+  .panel{ background:var(--card); border:1px solid var(--line); border-radius:20px; padding:var(--pad); }
+  .panel > :first-child{ margin-top:0; } .panel > :last-child{ margin-bottom:0; }
+  .kicker{ font-family:var(--mono); font-size:12px; font-weight:600; letter-spacing:2px;
+    text-transform:uppercase; color:var(--muted); margin:0 0 18px; }
+  header{ display:flex; align-items:baseline; justify-content:space-between; gap:24px; flex-wrap:wrap; margin:0 0 clamp(36px,5vw,56px); }
+  .wordmark{ font-family:var(--mono); font-weight:600; font-size:15px; }
+  .wordmark .chev{ color:var(--accent); }
+  .os-label{ font-family:var(--mono); font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); }
+  section{ margin:0 0 clamp(36px,5vw,52px); }
+  footer{ padding:0 var(--pad); font-family:var(--mono); font-size:12.5px; color:var(--muted); }
+
+  .lede{ font-size:14px; color:var(--muted); margin:-8px 0 24px; }
+  .group{ font-family:var(--mono); font-size:11.5px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--muted); padding:24px 0 12px; }
+  .group:first-child{ padding-top:8px; }
+  .srow{ display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,1.5fr) 96px; gap:8px 18px; padding:13px 0; border-top:1px solid var(--line); align-items:baseline; }
+  .srow .n{ font-family:var(--mono); font-size:12.5px; font-weight:600; }
+  .srow .w{ font-size:13px; color:var(--muted); }
+  .srow .m{ font-family:var(--mono); font-size:11.5px; color:var(--muted); }
+  .srow .m.q{ color:var(--flag); }
+  .chain{ display:flex; flex-wrap:wrap; gap:7px; align-items:center; margin-top:12px; }
+  .chip{ font-family:var(--mono); font-size:11.5px; padding:5px 11px; border:1px solid var(--line); border-radius:999px; background:var(--ink); }
+  .chip.gate{ border-color:var(--accent); color:var(--accent); background:transparent; }
+  .arr{ color:var(--muted); font-size:12px; }
+</style></head><body><div class="shell">
+  <nav class="rail">
+    <a href="the-floor.html">The floor</a>
+    <a href="the-green.html">The green</a>
+    <a href="the-engine.html">The engine</a>
+    <a href="the-work.html">The work</a>
+    <a href="the-rota.html">The rota</a>
+    <a href="the-skills.html" class="here"><span class="chev">&gt;&gt;</span> The skills</a>
+    <a href="the-brain.html">The brain</a>
+    <a href="the-flow.html">The flow</a>
+    <a href="the-broadcast.html">The broadcast</a>
+    <a href="the-estate.html">The estate</a>
+    <a href="the-connection.html">The connection</a>
+  </nav>
+  <div class="page">
+    <header>
+      <div class="wordmark">sample <span class="chev">&gt;&gt;</span> studio</div>
+      <div class="os-label">Founder OS · demo</div>
+    </header>
+
+    <section>
+      <p class="kicker">The skills · how the office works</p>
+      <p class="lede">12 skills · 2 runbooks · catalogue in git, owned not rented</p>
+      <div class="panel" style="padding:calc(var(--pad)*.55) var(--pad);">
+        <p class="group">Daily drivers</p>
+        <div class="srow"><span class="n">studio-voice</span><span class="w">Everything public sounds like you, not your assistant.</span><span class="m">daily driver</span></div>
+        <div class="srow"><span class="n">session-closeout</span><span class="w">What changed, why, next actions, handoff context.</span><span class="m">daily driver</span></div>
+        <p class="group">Quiet · candidates to revive or retire</p>
+        <div class="srow"><span class="n">deep-research-brief</span><span class="w">Structured market research. Unused since spring.</span><span class="m q">quiet</span></div>
+      </div>
+    </section>
+    <section><div class="panel">
+      <p class="kicker">Runbook · proposal, start to signed</p>
+      <div class="chain"><span class="chip">client-research</span><span class="arr">&rarr;</span><span class="chip">proposal-draft</span><span class="arr">&rarr;</span><span class="chip">critique-pass</span><span class="arr">&rarr;</span><span class="chip gate">confidentiality-gate</span><span class="arr">&rarr;</span><span class="chip">proof-pack</span></div>
+      <p style="font-size:12.5px; color:var(--muted); margin:16px 0 0;">Outlined pink chips are safety gates. Every chain ends by leaving proof.</p>
+    </div></section>
+
+    <footer>demo data — a fictional studio</footer>
+  </div>
+</div></body></html>

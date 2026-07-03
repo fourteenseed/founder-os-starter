@@ -2,6 +2,10 @@
 
 **The question it answers:** What am I saying to the world, and on which frequency?
 
+![the broadcast — demo](../assets/demo-the-broadcast.png)
+
+*The current angle on air, and the frequencies: one per project, each with its own voice, the personal one happily silent.*
+
 **The analogy.** The transmitter room. One transmitter, several frequencies — one per brand or project, each with its own voice. Nothing goes on air without the human's signature.
 
 **What's on the page.** On air now: the current angle and campaign. Waiting on you: the review queue. The desk: prompts that actually transmit — draft today's post (to a scheduling tool as a draft, never scheduled), review and put it on air (the signature door), log the transmission. The frequencies, each with what the world hears and its voice. The channels with their jobs and honest wire-states. The transmission log, including honest silence.

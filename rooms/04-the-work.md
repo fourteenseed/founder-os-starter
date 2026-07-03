@@ -2,6 +2,10 @@
 
 **The question it answers:** Where do I sit down and do the job?
 
+![the work — demo](../assets/demo-the-work.png)
+
+*One room, many contexts: the project pills swap the context, the bench of copy-button prompts never changes.*
+
 **The analogy.** One room, many contexts. The tools on the bench never change; switching projects swaps only the context — like a workshop where the bench stays put and the job on it changes.
 
 **What's on the page.** Project switcher at the top (in honest priority order: what earns, what might, what's for love). Per project: where I am (the one open thing, from live data), and the bench — copy-button prompts for the session arc: pick up where I left off, unblock me, close out the day, draft the update, harvest the learnings. Every prompt readable before copying; time-bound prompts carry a visible review-by tag.

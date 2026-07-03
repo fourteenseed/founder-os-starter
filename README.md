@@ -2,27 +2,23 @@
 
 A calm command centre for a founder who works with more than one AI tool.
 
-I used to run an office of fourteen people. I could look up from my desk and see who was working on what, and know what I could hand off. When I started building with AI agents, I missed that more than anything: the work was happening, but I couldn't see it. Outputs piled up in chat windows. Schedulers broke silently. I couldn't tell you which agent had shown up that morning, and I was the one carrying every piece of work between the tools.
+If you've ever run a business with people in it, you'll remember what a good office gave you. You could look up and see who was working on what. You could hand a job to someone and trust it would come back done, with a note. You could feel the state of things without asking. And if you're building your first business right now, on your own, with AI tools where the employees would be, that feeling is exactly what's missing: the work happens, but you can't see it, and you've quietly become the person carrying every task between the tools.
 
-Founder OS is the office I built to fix that. Eleven rooms, each answering exactly one question, all of it running on data that is allowed to say "I don't know". This repo is the vanilla version: the pattern with my private data removed, so you can build your own.
+Founder OS puts the office back. It's a small set of pages that sits on your own machine and treats your AI setup the way you'd treat a workplace: your tools become buildings on a campus, your agents become colleagues with names and desks, and the day-to-day starts to feel like somewhere you can orientate yourself each morning rather than a stack of chat windows. Eleven rooms, each answering exactly one question, all of it running on data that is allowed to say "I don't know".
 
-## Who this is for
+This repo is the vanilla version: the pattern, with the builder's private data removed, so you can make your own.
 
-Founders and operators who use several AI tools at once (Claude and ChatGPT and a local agent and whatever arrives next month) and can feel it getting messy. If you live happily inside one tool, you don't need this. If you've become the courier between five of them, you might.
+## The campus
 
-You don't need to be a developer. I'm not, in the traditional sense. The intended way to use this repo is the way you're probably already working: read this page yourself, then point your AI agent at the rest and build together.
+The whole thing runs on one analogy, and it's worth having before anything else.
 
-## How to use this repo
+Your AI tools are **buildings on a campus**, each with its own faculty: one is better at reasoning and writing, one at code, one at research. You don't crown a favourite; you use each building for what it teaches best. Tools you own but haven't put to work are empty lots, honestly labelled.
 
-Say this to whichever AI agent you work with:
+Your agents are **colleagues, not buildings**. A colleague clocks in at a building, but nothing that makes them who they are lives there. Name them like people: "Nell hasn't run since Monday" lands differently from "cron job 4 failed", and the difference is what makes you actually look.
 
-> Read llms.txt and AGENTS.md in this repo, then help me plan my own Founder OS. Interview me first.
+A **keycard** is a connection plus a permission, and some doors (send, publish, spend) open only with your signature at the **gatehouse**. Your memory is the **library** and your procedures are the **workshop**: two pillars every building connects to, so nothing stays trapped where it was made.
 
-That's it. The agent gets its instructions from [AGENTS.md](AGENTS.md); you get a conversation about your own setup rather than a pile of files to decode.
-
-## The campus, in one paragraph
-
-The whole thing runs on one analogy. Your AI tools are buildings on a campus, each with its own faculty: one is better at reasoning and writing, one at code, one at research. Your agents are colleagues, not buildings; a colleague works in a building but isn't owned by it. A keycard is a connection plus a permission, and some doors (send, publish, spend) open only with your signature at the gatehouse. Your memory is the library and your procedures are the workshop: two pillars every building connects to, so nothing is trapped where it was made. And at the centre of the campus is the green, the open space where you are not in any building at all, because a founder OS that can't see your Wednesday badminton will schedule over it forever.
+And at the centre of the campus is the **green**: the open space where you're not in any building at all — family, sport, learning, rest. It's on the map because a founder OS that can't see your Wednesday evening will schedule over it forever.
 
 ## What it looks like
 

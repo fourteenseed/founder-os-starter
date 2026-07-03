@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Founder OS demo · The rota</title>
+<style>
+  :root{
+    --ink:#f5f5f3; --card:#ffffff; --line:#d1d5db; --text:#0b0d10;
+    --muted:#6b7280; --accent:#d63384; --calm:#2f8f5b; --flag:#a5690f;
+    --pad: clamp(30px, 4.5vw, 48px);
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  *{ box-sizing:border-box; min-width:0; }
+  html{ background:var(--ink); }
+  body{ margin:0; font-family:var(--sans); color:var(--text); line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    padding: clamp(28px,5vw,60px) clamp(20px,5vw,56px) clamp(48px,6vw,80px); }
+  .shell{ max-width:1080px; margin:0 auto; display:flex; gap:clamp(28px,4vw,56px); align-items:flex-start; }
+  .rail{ flex:0 0 140px; font-family:var(--mono); font-size:13px; display:flex; flex-direction:column; gap:14px; padding-top:6px; }
+  .rail a{ color:var(--muted); text-decoration:none; }
+  .rail a.here{ color:var(--text); }
+  .rail .chev{ color:var(--accent); }
+  .page{ flex:1; min-width:0; max-width:920px; }
+  .panel{ background:var(--card); border:1px solid var(--line); border-radius:20px; padding:var(--pad); }
+  .panel > :first-child{ margin-top:0; } .panel > :last-child{ margin-bottom:0; }
+  .kicker{ font-family:var(--mono); font-size:12px; font-weight:600; letter-spacing:2px;
+    text-transform:uppercase; color:var(--muted); margin:0 0 18px; }
+  header{ display:flex; align-items:baseline; justify-content:space-between; gap:24px; flex-wrap:wrap; margin:0 0 clamp(36px,5vw,56px); }
+  .wordmark{ font-family:var(--mono); font-weight:600; font-size:15px; }
+  .wordmark .chev{ color:var(--accent); }
+  .os-label{ font-family:var(--mono); font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); }
+  section{ margin:0 0 clamp(36px,5vw,52px); }
+  footer{ padding:0 var(--pad); font-family:var(--mono); font-size:12.5px; color:var(--muted); }
+
+  .strip{ position:relative; height:150px; background:var(--card); border:1px solid var(--line); border-radius:20px; overflow:hidden; }
+  .band{ position:absolute; top:0; bottom:26px; left:80%; width:20%; background:var(--ink); }
+  .band span{ position:absolute; top:12px; left:14px; font-size:11.5px; color:var(--muted); white-space:nowrap; }
+  .axis{ position:absolute; left:0; right:0; bottom:0; height:26px; border-top:1px solid var(--line); font-family:var(--mono); font-size:10.5px; color:var(--muted); }
+  .axis span{ position:absolute; top:5px; }
+  .run{ position:absolute; display:flex; align-items:center; gap:8px; }
+  .run i{ width:8px; height:8px; border-radius:999px; background:var(--accent); font-style:normal; }
+  .run i.s{ background:var(--calm); }
+  .run b{ font-size:12.5px; font-weight:400; white-space:nowrap; }
+  .run small{ color:var(--muted); }
+  .row{ display:grid; grid-template-columns:minmax(0,1.5fr) 90px minmax(0,1fr) minmax(0,1fr); gap:10px 18px; padding:14px 0; border-top:1px solid var(--line); align-items:baseline; }
+  .row:first-of-type{ border-top:none; }
+  .row .who{ font-weight:600; font-size:15px; }
+  .row .who small{ font-weight:400; color:var(--muted); }
+  .row .rt{ font-family:var(--mono); font-size:12px; color:var(--muted); }
+  .row .when{ font-size:13.5px; }
+  .row .lane{ font-size:13px; color:var(--muted); }
+  .row .lane.free{ color:var(--calm); }
+</style></head><body><div class="shell">
+  <nav class="rail">
+    <a href="the-floor.html">The floor</a>
+    <a href="the-green.html">The green</a>
+    <a href="the-engine.html">The engine</a>
+    <a href="the-work.html">The work</a>
+    <a href="the-rota.html" class="here"><span class="chev">&gt;&gt;</span> The rota</a>
+    <a href="the-skills.html">The skills</a>
+    <a href="the-brain.html">The brain</a>
+    <a href="the-flow.html">The flow</a>
+    <a href="the-broadcast.html">The broadcast</a>
+    <a href="the-estate.html">The estate</a>
+    <a href="the-connection.html">The connection</a>
+  </nav>
+  <div class="page">
+    <header>
+      <div class="wordmark">sample <span class="chev">&gt;&gt;</span> studio</div>
+      <div class="os-label">Founder OS · demo</div>
+    </header>
+
+    <section>
+      <p class="kicker">The rota · when the office runs</p>
+      <div class="strip">
+        <div class="band"><span>your day starts · 09:00</span></div>
+        <div class="run" style="left:14%; top:30px;"><i></i><b>06:00 Juno <small>daily</small></b></div>
+        <div class="run" style="left:30%; top:64px;"><i></i><b>06:45 Felix <small>Mon &amp; Thu</small></b></div>
+        <div class="run" style="left:50%; top:30px;"><i></i><b>07:30 Vale <small>Fri</small></b></div>
+        <div class="run" style="left:60%; top:98px;"><i class="s"></i><b>08:00 watchdog <small>daily</small></b></div>
+        <div class="axis"><span style="left:1.5%">05:00</span><span style="left:20%">06:00</span><span style="left:40%">07:00</span><span style="left:60%">08:00</span><span style="left:80%">09:00</span></div>
+      </div>
+    </section>
+    <section><div class="panel" style="padding:calc(var(--pad)*.55) var(--pad);">
+      <div class="row"><span class="who">Juno <small>· daily digest</small></span><span class="rt">Claude</span><span class="when">daily, 06:00</span><span class="lane">inside the plan</span></div>
+      <div class="row"><span class="who">Felix <small>· market watch</small></span><span class="rt">Claude</span><span class="when">Mon &amp; Thu, 06:45</span><span class="lane">inside the plan</span></div>
+      <div class="row"><span class="who">Vale <small>· chief of staff</small></span><span class="rt">Claude</span><span class="when">Fridays, 07:30</span><span class="lane">inside the plan</span></div>
+      <div class="row"><span class="who">Watchdog</span><span class="rt">local</span><span class="when">daily, 08:00</span><span class="lane free">local script, no tokens</span></div>
+    </div></section>
+
+    <footer>demo data — a fictional studio</footer>
+  </div>
+</div></body></html>

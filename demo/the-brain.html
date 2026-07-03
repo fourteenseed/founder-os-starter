@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Founder OS demo · The brain</title>
+<style>
+  :root{
+    --ink:#f5f5f3; --card:#ffffff; --line:#d1d5db; --text:#0b0d10;
+    --muted:#6b7280; --accent:#d63384; --calm:#2f8f5b; --flag:#a5690f;
+    --pad: clamp(30px, 4.5vw, 48px);
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  *{ box-sizing:border-box; min-width:0; }
+  html{ background:var(--ink); }
+  body{ margin:0; font-family:var(--sans); color:var(--text); line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    padding: clamp(28px,5vw,60px) clamp(20px,5vw,56px) clamp(48px,6vw,80px); }
+  .shell{ max-width:1080px; margin:0 auto; display:flex; gap:clamp(28px,4vw,56px); align-items:flex-start; }
+  .rail{ flex:0 0 140px; font-family:var(--mono); font-size:13px; display:flex; flex-direction:column; gap:14px; padding-top:6px; }
+  .rail a{ color:var(--muted); text-decoration:none; }
+  .rail a.here{ color:var(--text); }
+  .rail .chev{ color:var(--accent); }
+  .page{ flex:1; min-width:0; max-width:920px; }
+  .panel{ background:var(--card); border:1px solid var(--line); border-radius:20px; padding:var(--pad); }
+  .panel > :first-child{ margin-top:0; } .panel > :last-child{ margin-bottom:0; }
+  .kicker{ font-family:var(--mono); font-size:12px; font-weight:600; letter-spacing:2px;
+    text-transform:uppercase; color:var(--muted); margin:0 0 18px; }
+  header{ display:flex; align-items:baseline; justify-content:space-between; gap:24px; flex-wrap:wrap; margin:0 0 clamp(36px,5vw,56px); }
+  .wordmark{ font-family:var(--mono); font-weight:600; font-size:15px; }
+  .wordmark .chev{ color:var(--accent); }
+  .os-label{ font-family:var(--mono); font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); }
+  section{ margin:0 0 clamp(36px,5vw,52px); }
+  footer{ padding:0 var(--pad); font-family:var(--mono); font-size:12.5px; color:var(--muted); }
+
+  .pulse{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:14px; }
+  .pulse .panel{ padding:calc(var(--pad)*.55); }
+  .pulse .l{ font-size:12.5px; color:var(--muted); margin:0 0 6px; }
+  .pulse .v{ font-size:clamp(24px,3vw,32px); font-weight:650; margin:0; }
+  .ap{ display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.5fr) 92px; gap:8px 18px; padding:13px 0; border-top:1px solid var(--line); align-items:baseline; }
+  .ap:first-of-type{ border-top:none; }
+  .ap .m{ font-weight:600; font-size:14px; }
+  .ap .r{ font-size:13px; color:var(--muted); }
+  .ap .s{ font-family:var(--mono); font-size:11.5px; }
+  .s.ok{ color:var(--calm); } .s.warn{ color:var(--flag); } .s.gap{ color:var(--flag); font-weight:700; }
+</style></head><body><div class="shell">
+  <nav class="rail">
+    <a href="the-floor.html">The floor</a>
+    <a href="the-green.html">The green</a>
+    <a href="the-engine.html">The engine</a>
+    <a href="the-work.html">The work</a>
+    <a href="the-rota.html">The rota</a>
+    <a href="the-skills.html">The skills</a>
+    <a href="the-brain.html" class="here"><span class="chev">&gt;&gt;</span> The brain</a>
+    <a href="the-flow.html">The flow</a>
+    <a href="the-broadcast.html">The broadcast</a>
+    <a href="the-estate.html">The estate</a>
+    <a href="the-connection.html">The connection</a>
+  </nav>
+  <div class="page">
+    <header>
+      <div class="wordmark">sample <span class="chev">&gt;&gt;</span> studio</div>
+      <div class="os-label">Founder OS · demo</div>
+    </header>
+
+    <section>
+      <p class="kicker">The brain · what the office remembers</p>
+      <div class="pulse">
+        <div class="panel"><p class="l">Thoughts held</p><p class="v">312</p></div>
+        <div class="panel"><p class="l">Remembering since</p><p class="v">March</p></div>
+        <div class="panel"><p class="l">Last capture</p><p class="v">today</p></div>
+        <div class="panel"><p class="l">Past fortnight</p><p class="v">18</p></div>
+      </div>
+    </section>
+    <section>
+      <p class="kicker" style="padding:0 6px;">The aperture · what flows past you, and whether it has a route in</p>
+      <div class="panel" style="padding:calc(var(--pad)*.55) var(--pad);">
+        <div class="ap"><span class="m">Newsletters</span><span class="r">Juno reads, files, and archives daily</span><span class="s ok">routed</span></div>
+        <div class="ap"><span class="m">Meetings</span><span class="r">transcripts synthesised twice a week</span><span class="s ok">routed</span></div>
+        <div class="ap"><span class="m">Working sessions</span><span class="r">"capture this" — when you remember</span><span class="s warn">by hand</span></div>
+        <div class="ap"><span class="m">Podcasts &amp; videos</span><span class="r">hours of listening, nothing lands</span><span class="s gap">no route</span></div>
+      </div>
+    </section>
+
+    <footer>demo data — a fictional studio</footer>
+  </div>
+</div></body></html>

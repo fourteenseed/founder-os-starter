@@ -2,6 +2,10 @@
 
 **The question it answers:** Did my agents show up today?
 
+![the floor — demo](../assets/demo-the-floor.png)
+
+*The next move at the top, one line from the chief of staff, and every agent at a named desk with an honest last-ran read.*
+
 **The analogy.** The office floor. You look up from your desk and see your colleagues — except your colleagues are agents, and each is named like a person. The chief of staff sits at the head.
 
 **What's on the page.** One desk per agent: a human name, a plain-language role, and an honest last-ran read — "ran today", "hasn't run since Monday", "no run recorded". A calm green dot when fresh, a quiet amber flag when stale. Above the floor: the single next move (the most important task the data can actually justify), and one line from the chief-of-staff agent — a real handoff, a real decision, or nothing at all.

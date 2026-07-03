@@ -2,6 +2,10 @@
 
 **The question it answers:** What does my week look like as a human, not a machine?
 
+![the green — demo](../assets/demo-the-green.png)
+
+*The week from the real calendar: work blocks, life markers, protected time drawn as first-class blocks, and the charter the system obeys.*
+
 **The analogy.** The open space at the centre of every campus — where you're not in any building. Sports field, quiet corner, the walk between lectures.
 
 **What's on the page.** The week read from the real calendar, as a human week: work blocks, life markers (family shows as markers only; the detail stays in the personal lane), learning, and protected time drawn as first-class blocks, not gaps. A study corner for your own learning. And the charter: the written rules the system obeys about its human — outputs wait, they don't chase; evenings belong to the human; protected time is load-bearing.

@@ -2,6 +2,10 @@
 
 **The question it answers:** How does data move through my whole stack?
 
+![the flow — demo](../assets/demo-the-flow.png)
+
+*The campus map itself: buildings with faculties, the two pillars, the engine room, the record office, and the gatehouse.*
+
 **The analogy.** The campus map itself: buildings at the top, the engine room routing, the record office filing, the gatehouse checking, the world below — with the library and workshop as full-height pillars every building connects to.
 
 **What's on the page.** The map, drawn: every surface as a building with its faculty and tier (manual, mixed, automated); empty lots for tools owned but unbuilt; corridor labels carrying the rhythm (how often data moves); the keycard register (who may open which doors, and which need the human's signature); and dashed ghost nodes for what's next — the map doubles as the build roadmap.

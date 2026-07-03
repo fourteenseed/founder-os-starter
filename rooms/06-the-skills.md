@@ -2,6 +2,10 @@
 
 **The question it answers:** How is work done here, and is it owned or rented?
 
+![the skills — demo](../assets/demo-the-skills.png)
+
+*The shelf grouped by how often you reach for each skill, and a runbook drawn as a chain with its safety gate outlined.*
+
 **The analogy.** The workshop: the shelf of tools, each with one job, and the runbooks that chain them into outcomes.
 
 **What's on the page.** The shelf: every skill with its one-line purpose, grouped by how often you reach for it (daily drivers, the spine, weekly, occasional, quiet — with quiet honestly labelled "candidates to revive or retire"). The runbooks as visible chains: which skills compose, where the safety gates sit, and the rule that every chain ends by leaving proof. A trial section for skills earning their place. And the improve queue, fed by your own catalogue.
