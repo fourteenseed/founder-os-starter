@@ -6,14 +6,14 @@ This repo is documentation, not software. There is nothing to install. An agent 
 
 ## Structure
 
-- [README.md](README.md): the human front door — who this is for and how to use it
+- [README.md](README.md): the human front door: who this is for and how to use it
 - [AGENTS.md](AGENTS.md): instructions for the agent a visitor points at this repo
-- [principles/the-campus.md](principles/the-campus.md): the operating analogy — buildings, colleagues, keycards, the gatehouse, the pillars, the green
+- [principles/the-campus.md](principles/the-campus.md): the operating analogy: buildings, colleagues, keycards, the gatehouse, the pillars, the green
 - [principles/honesty-rules.md](principles/honesty-rules.md): the non-negotiable rules every room obeys
 - [principles/credits.md](principles/credits.md): what this borrows, from whom, and what was changed
 - [start-here/first-week.md](start-here/first-week.md): the build order that actually worked
-- rooms/: one file per room, numbered in daily-loop order — each states the question it answers, the analogy, what's on the page, the rule it carries, its inspiration, and how to build your own
+- rooms/: one file per room, numbered in daily-loop order; each states the question it answers, the analogy, what's on the page, the rule it carries, its inspiration, and how to build your own
 
 ## Contact
 
-Wendy Harris, Fourteen Seed — wendy@fourteenseed.com — https://fourteenseed.com
+Wendy Harris, Fourteen Seed · wendy@fourteenseed.com · https://fourteenseed.com

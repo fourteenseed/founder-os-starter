@@ -2,15 +2,15 @@
 
 **The question it answers:** What work is moving, and what waits on me?
 
-![the engine — demo](../assets/demo-the-engine.png)
+![the engine · demo](../assets/demo-the-engine.png)
 
 *What waits on a human, what's in motion, and receipts for what the agents proved. Every card links to the real task board.*
 
 **The analogy.** The engine room: where work is routed between humans and agents, with receipts on everything.
 
-**What's on the page.** Three things only: the cards waiting on a human (with links to the real task board), what's in motion, and this week's receipts — evidence of what agents finished. Then pointers to the full board. The rule is written on the page itself: this room points, it never duplicates; if it ever shows card detail, it has become a second task board and gets cut back.
+**What's on the page.** Three things only: the cards waiting on a human (with links to the real task board), what's in motion, and this week's receipts: evidence of what agents finished. Then pointers to the full board. The rule is written on the page itself: this room points, it never duplicates; if it ever shows card detail, it has become a second task board and gets cut back.
 
-**The rule it carries.** Point, don't duplicate — and receipts on everything.
+**The rule it carries.** Point, don't duplicate: and receipts on everything.
 
 **Inspired by / changed.** This is Nate B. Jones's Open Engine, adopted close to whole: the seven-part task record (requester, outcome, sources, acceptance, boundaries, blocker rule, receipt) and the receipt vocabulary (AGENT CLAIMED / BLOCKED / HUMAN HOLD / RESUMED / DONE / FAILED) are his design. What changed: this room is the attention view only; the board itself lives in a real task tool (Linear in the original).
 

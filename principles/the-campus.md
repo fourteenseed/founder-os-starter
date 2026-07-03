@@ -2,11 +2,11 @@
 
 The operating analogy for the whole OS. It earns its keep because every part maps to something technically real.
 
-**Buildings are your AI tools.** Claude, ChatGPT, Codex, a local agent runtime — each is a building with its own faculty. One is better at reasoning and writing, one at code, one at browsing, one at research. You don't crown a favourite; you use each building for what it teaches best. Tools you own but haven't put to work are empty lots, honestly labelled.
+**Buildings are your AI tools.** Claude, ChatGPT, Codex, a local agent runtime: each is a building with its own faculty. One is better at reasoning and writing, one at code, one at browsing, one at research. You don't crown a favourite; you use each building for what it teaches best. Tools you own but haven't put to work are empty lots, honestly labelled.
 
 **Agents are colleagues, not buildings.** A colleague clocks in at a building, but nothing that makes them who they are lives there: their procedure comes from the workshop, their knowledge from the library. Move a colleague to a different building and they're still the same colleague. Name them like people. It matters more than it sounds: "Iris hasn't run since Monday" lands differently from "cron job 4 failed", and the difference is what makes you actually look.
 
-**Keycards are connections plus permissions.** When an agent reads your email, that's a keycard being accepted at a door, with a scope: read and file, never send. A keycard register — who holds access to what — makes your permission model visible, usually for the first time.
+**Keycards are connections plus permissions.** When an agent reads your email, that's a keycard being accepted at a door, with a scope: read and file, never send. A keycard register: who holds access to what; makes your permission model visible, usually for the first time.
 
 **The gatehouse holds the signature doors.** Send, publish, deploy, spend: no keycard opens these, only the human. The gatehouse isn't there to slow work down; it's there so nothing leaves that shouldn't, and nothing gets in that shouldn't.
 

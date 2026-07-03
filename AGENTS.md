@@ -7,11 +7,11 @@ A human has pointed you at this repo because their multi-tool AI setup is gettin
 Do not generate files yet. Ask, in your own words:
 
 1. Which AI tools and surfaces do they actually use? (These become the campus buildings.)
-2. What recurring automated work runs already — scheduled tasks, cron jobs, assistants? (These become the colleagues on the floor.)
-3. What is their one most trustworthy machine-readable data source about that work — a log, a folder of outputs, a task board? (This becomes the floor's data. If none exists, the first project is creating one, not building pages.)
+2. What recurring automated work runs already, such as scheduled tasks, cron jobs, or assistants? (These become the colleagues on the floor.)
+3. What is their one most trustworthy machine-readable data source about that work: a log, a folder of outputs, a task board? (This becomes the floor's data. If none exists, the first project is creating one, not building pages.)
 4. What are their projects, in honest priority order? What earns money, what might, what is for love?
-5. Where does their work-in-progress live — task boards, notes, repos?
-6. What does their human week contain that must be protected — family, sport, learning, rest?
+5. Where does their work-in-progress live: task boards, notes, repos?
+6. What does their human week contain that must be protected: family, sport, learning, rest?
 
 ## The rules you must keep (from principles/honesty-rules.md)
 

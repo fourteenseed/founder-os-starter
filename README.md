@@ -18,21 +18,21 @@ Your agents are **colleagues, not buildings**. A colleague clocks in at a buildi
 
 A **keycard** is a connection plus a permission, and some doors (send, publish, spend) open only with your signature at the **gatehouse**. Your memory is the **library** and your procedures are the **workshop**: two pillars every building connects to, so nothing stays trapped where it was made.
 
-And at the centre of the campus is the **green**: the open space where you're not in any building at all — family, sport, learning, rest. It's on the map because a founder OS that can't see your Wednesday evening will schedule over it forever.
+And at the centre of the campus is the **green**: the open space where you're not in any building at all: family, sport, learning, rest. It's on the map because a founder OS that can't see your Wednesday evening will schedule over it forever.
 
 ## What it looks like
 
-Three of the rooms, with demo data for a fictional studio. The pages themselves are in [demo/](demo/) — download the repo and open them in any browser, nothing to install.
+Three of the rooms, with demo data for a fictional studio. The pages themselves are in [demo/](demo/): download the repo and open them in any browser, nothing to install.
 
-**The floor** — did my agents show up today? The next move at the top, one line from the chief of staff, and every agent at a named desk with an honest last-ran read.
+**The floor**: did my agents show up today? The next move at the top, one line from the chief of staff, and every agent at a named desk with an honest last-ran read.
 
 ![The floor](assets/demo-the-floor.png)
 
-**The green** — the week as a human week. Work blocks, life markers, protected time drawn as first-class blocks, and the charter: the rules the system obeys about its human.
+**The green**: the week as a human week. Work blocks, life markers, protected time drawn as first-class blocks, and the charter: the rules the system obeys about its human.
 
 ![The green](assets/demo-the-green.png)
 
-**The engine** — what waits on a human, what's in motion, and receipts for what the agents proved. It points at the real task board; it never duplicates it.
+**The engine**: what waits on a human, what's in motion, and receipts for what the agents proved. It points at the real task board; it never duplicates it.
 
 ![The engine](assets/demo-the-engine.png)
 
