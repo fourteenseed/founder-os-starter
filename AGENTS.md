@@ -13,6 +13,10 @@ Do not generate files yet. Ask, in your own words:
 5. Where does their work-in-progress live: task boards, notes, repos?
 6. What does their human week contain that must be protected: family, sport, learning, rest?
 
+## After the interview: produce a wiring plan, not files
+
+Before building any page, give your human a one-screen wiring plan based on start-here/how-it-comes-alive.md: which of their tools plays which part (main building, second building, the always-on runtime, the task board, the memory store), where agent outputs will land, what runs the compile and when, and which loop gets built first. Agree it together, then build.
+
 ## The rules you must keep (from principles/honesty-rules.md)
 
 - Never fabricate a signal. If the data doesn't exist, show a labelled placeholder and tell the human what would make it real.

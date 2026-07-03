@@ -13,6 +13,7 @@ This repo is documentation, not software. There is nothing to install. An agent 
 - [principles/credits.md](principles/credits.md): what this borrows, from whom, and what was changed
 - [start-here/first-week.md](start-here/first-week.md): the build order that actually worked
 - [start-here/running-it-locally.md](start-here/running-it-locally.md): the local server, the login service, and the data compiles, in plain terms
+- [start-here/how-it-comes-alive.md](start-here/how-it-comes-alive.md): the practical wiring for a multi-tool stack (Claude, Codex, Hermes or cron, a task board): the heartbeat loop, the work loop, and the human loop
 - rooms/: one file per room, numbered in daily-loop order; each states the question it answers, the analogy, what's on the page, the rule it carries, its inspiration, and how to build your own
 
 ## Contact
