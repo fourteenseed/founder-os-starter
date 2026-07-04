@@ -19,3 +19,18 @@ These are the product. The rooms are just places the rules live. The first versi
 8. **Prompts are content, and content goes stale.** Any stored prompt can be read before it's copied, and time-bound prompts carry a visible review-by date.
 
 9. **Protect the human like the data.** Screen time is not progress either. Protected time: family, sport, rest, learning; is load-bearing, not leftover, and the system schedules nothing into it.
+
+## The confidence vocabulary
+
+The rules above say what honesty is; these six words make it checkable. Every data claim in the OS should be describable by exactly one of them:
+
+- **verified**: checked against the live source by a scheduled compile
+- **manual**: entered or declared by the human; trusted, not machine-checked
+- **stale**: was true once; older than its cadence allows
+- **gated**: an answer exists but sits behind a door only the human opens
+- **unknown**: honestly not known; no route to the answer exists yet
+- **conflict**: two sources disagree and no one has settled it
+
+The test: look at any page and ask which word each claim is wearing. A claim that fits none of them is a fib waiting to happen. The words also live in [campus.yaml](../campus.yaml), where each room and agent declares its state.
+
+This vocabulary was suggested by Mark Bunce within a day of the repo going public: preserve the clarity, then add just enough contract underneath it so agents can operate safely. He was right.

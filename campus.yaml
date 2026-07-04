@@ -1,0 +1,162 @@
+# =====================================================================
+# campus.yaml : the machine-readable map of the campus.
+#
+# The rooms and principles in this repo are written for humans. This
+# file is the same structure written for your agent: buildings,
+# colleagues, keycards, signature doors, and where the truth lives,
+# in a format it reads without guessing. One map, two audiences.
+#
+# TO THE AGENT FILLING THIS IN: do it during the interview in
+# AGENTS.md, with your human, from what actually exists. Never invent
+# an entry. If a fact is missing, write unknown; that word is load
+# bearing here.
+#
+# The values below describe sample >> studio, the fictional demo
+# studio from demo/. Replace all of them.
+#
+# The manifest idea and the confidence vocabulary were contributed by
+# Mark Bunce, within a day of this repo going public. See credits.
+# =====================================================================
+
+meta:
+  owner: your name here
+  written: YYYY-MM-DD
+  timezone: your timezone
+  pages: where the pages are served, e.g. http://localhost:8080/
+  confidence_vocabulary:
+    # Every data claim in the OS should be describable by exactly one
+    # of these six words. This is what makes the honesty rules
+    # checkable rather than aspirational.
+    verified: checked against the live source by a scheduled compile
+    manual: entered or declared by the human; trusted, not machine-checked
+    stale: was true once; older than its cadence allows
+    gated: an answer exists but sits behind a door only the human opens
+    unknown: honestly not known; no route to the answer exists yet
+    conflict: two sources disagree and no one has settled it
+
+# ---------------------------------------------------------------------
+# Buildings: your tools are runtimes with faculties. Agents are NOT
+# buildings; they are colleagues who clock in at one. Tools you own
+# but haven't put to work are empty lots, honestly labelled.
+# ---------------------------------------------------------------------
+buildings:
+  claude:
+    faculty: reasoning and writing; the main building
+    status: occupied
+  codex:
+    faculty: coding
+    status: occupied
+  hermes:
+    faculty: the engine block; the always-on runtime
+    status: occupied
+  gemini:
+    faculty: unzoned
+    status: empty lot
+
+pillars:
+  # Memory and procedures are not pipeline stages: every building has
+  # a corridor into both.
+  library:
+    what: the memory store (whichever one works for you)
+    access: every keycard reads here; captures write back
+  workshop:
+    what: procedures in a git repo, portable across every surface
+    access: skills live here so nothing drifts
+
+# ---------------------------------------------------------------------
+# The gatehouse: doors no keycard opens. Only the human's signature.
+# Copy this list as-is unless you have a reason to add to it; never
+# remove from it.
+# ---------------------------------------------------------------------
+signature_doors:
+  - send email or messages to anyone outside
+  - publish anything, anywhere
+  - deploy
+  - spend
+  - share anything private
+
+# ---------------------------------------------------------------------
+# Colleagues: agent, building, cadence, where their proof lands.
+# Name them like people; "Nell hasn't run since Monday" makes you
+# look in a way "cron job 4 failed" never will.
+# ---------------------------------------------------------------------
+agents:
+  vale:
+    role: chief of staff
+    building: claude
+    cadence: weekly (Fridays 07:30)
+    output: path/to/vale-brief-latest.md
+    confidence: verified
+  juno:
+    role: daily digest
+    building: claude
+    cadence: daily
+    output: path/to/daily-digest/
+    confidence: verified
+  felix:
+    role: market watch
+    building: claude
+    cadence: twice weekly
+    output: path/to/market-watch/
+    confidence: verified
+  nell:
+    role: follow-ups
+    building: claude
+    cadence: twice weekly
+    output: path/to/follow-ups/
+    confidence: verified
+  watchdog:
+    role: caretaker with a torch; script only, no tokens, no judgement
+    building: hermes
+    cadence: a few times a day, on cron
+    output: path/to/state.json
+    confidence: verified
+
+# ---------------------------------------------------------------------
+# Keycards: what each colleague may open, and the doors refused.
+# The never line is the most important line on each card.
+# ---------------------------------------------------------------------
+keycards:
+  juno:
+    may: [inbox read, vault write own folder, library capture]
+    never: sends email
+  nell:
+    may: [inbox read, transcripts read, vault write own synthesis]
+    never: replies for the human
+  vale:
+    may: [statuses read, scheduled outputs read, own brief write]
+    never: edits the statuses she reports on
+  watchdog:
+    may: [vault read every proof file, OS data write compile]
+    never: holds tokens or makes judgements
+  you:
+    may: [everything]
+    only_you: [send, publish, deploy, spend, share anything private]
+
+# ---------------------------------------------------------------------
+# Rooms: one question each, and where the truth actually lives. This
+# is the source-of-truth register: the page points at the source; the
+# source keeps the record; a page that mirrors a source will drift.
+# List only the rooms you have actually built.
+# ---------------------------------------------------------------------
+rooms:
+  floor:
+    question: did my agents show up today?
+    source_of_truth: the compiled state file, on a schedule you don't touch
+    page_state: verified (and it admits snapshot when a compile is missed)
+  green:
+    question: what does my week look like as a human?
+    source_of_truth: the real calendar
+    page_state: manual snapshot until the live wire exists, and it says so
+  engine:
+    question: what work is moving, and what waits on me?
+    source_of_truth: the task board (Linear, or any board an agent can read)
+    page_state: manual snapshot until the compile exists, and it says so
+
+# ---------------------------------------------------------------------
+# Receipts: where proof of agent work lands. Work is done when there
+# is evidence, not when the agent says done.
+# ---------------------------------------------------------------------
+receipts:
+  task_work: task board comments using the Open Engine vocabulary (see templates/task-record.md)
+  outputs: every scheduled agent's dated file in its folder, listed above

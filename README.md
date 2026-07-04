@@ -20,6 +20,8 @@ A **keycard** is a connection plus a permission, and some doors (send, publish, 
 
 And at the centre of the campus is the **green**: the open space where you're not in any building at all: family, sport, learning, rest. It's on the map because a founder OS that can't see your Wednesday evening will schedule over it forever.
 
+The whole analogy also exists as a single machine-readable file, [campus.yaml](campus.yaml): the map pinned up at the entrance, so your agent reads the same structure you do instead of guessing it from prose.
+
 ## What it looks like
 
 Three of the rooms, with demo data for a fictional studio. The pages themselves are in [demo/](demo/): download the repo and open them in any browser, nothing to install.

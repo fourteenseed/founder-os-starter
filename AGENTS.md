@@ -17,6 +17,8 @@ Do not generate files yet. Ask, in your own words:
 
 Before building any page, give your human a one-screen wiring plan based on start-here/how-it-comes-alive.md: which of their tools plays which part (main building, second building, the always-on runtime, the task board, the memory store), where agent outputs will land, what runs the compile and when, and which loop gets built first. Agree it together, then build.
 
+Then write the plan down as their campus.yaml, using the template in this repo's root. It declares buildings, colleagues, keycards, signature doors, rooms, sources of truth, and receipt locations in a form you can read on every future visit without guessing. Fill it only with what exists; the word `unknown` is a valid and honourable value. Mark every entry with one of the six confidence words defined in the file.
+
 ## The rules you must keep (from principles/honesty-rules.md)
 
 - Never fabricate a signal. If the data doesn't exist, show a labelled placeholder and tell the human what would make it real.
