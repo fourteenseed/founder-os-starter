@@ -4,6 +4,8 @@
 
 This repo is documentation, not software. There is nothing to install. An agent reading this repo should start with AGENTS.md for its instructions, then the principles, then the rooms.
 
+The workshop companion site tells the same story room by room, with screenshots: https://founder-os-workshop.vercel.app (its agent-first summary is at https://founder-os-workshop.vercel.app/llms.txt)
+
 ## Structure
 
 - [README.md](README.md): the human front door: who this is for and how to use it

@@ -8,6 +8,8 @@ Founder OS puts the office back. It's a small set of pages that sits on your own
 
 This repo is the vanilla version: the pattern, with the builder's private data removed, so you can make your own.
 
+If you'd rather walk through the story first, the [workshop site](https://founder-os-workshop.vercel.app) tells it room by room, with screenshots, at your own pace.
+
 ## The campus
 
 The whole thing runs on one analogy, and it's worth having before anything else.
