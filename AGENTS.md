@@ -35,6 +35,7 @@ Then write the plan down as their campus.yaml, using the template in this repo's
 - Adapt the room names and the metaphor to your human. The campus worked for its builder because she thinks visually and her father was a radio operator; your human's version should sound like them.
 - Not every room deserves to exist on day one. The original took two days and eleven rooms because its builder already had agents, skills, and a memory store running. Most people should build three rooms and live in them for a week.
 - The green is not optional garnish. The room that protects the human is the reason the rest gets trusted.
+- If your human runs the Claude desktop app on a Mac, the sessions room is the cheapest second room after the floor: tools/sessions/ has a working compiler and page. Write the privacy list with them before the first run, and have them read the compiled file before the page is served.
 
 ## What not to do
 

@@ -1,6 +1,6 @@
 # Founder OS Starter
 
-> The vanilla pattern for a personal command centre that works across multiple AI tools: eleven rooms, each answering one question, run on honest data. Built by Wendy Harris (Fourteen Seed) and shared so people can build their own with their agent's help.
+> The vanilla pattern for a personal command centre that works across multiple AI tools: thirteen rooms, each answering one question, run on honest data. Built by Wendy Harris (Fourteen Seed) and shared so people can build their own with their agent's help.
 
 This repo is documentation, not software. There is nothing to install. An agent reading this repo should start with AGENTS.md for its instructions, then the principles, then the rooms.
 
@@ -18,7 +18,8 @@ The workshop companion site tells the same story room by room, with screenshots:
 - [start-here/running-it-locally.md](start-here/running-it-locally.md): the local server, the login service, and the data compiles, in plain terms
 - [start-here/how-it-comes-alive.md](start-here/how-it-comes-alive.md): the practical wiring for a multi-tool stack (Claude, Codex, Hermes or cron, a task board): the heartbeat loop, the work loop, and the human loop
 - [templates/task-record.md](templates/task-record.md): the Open Engine task record and receipts vocabulary, copy-paste ready
-- rooms/: one file per room, numbered in daily-loop order; each states the question it answers, the analogy, what's on the page, the rule it carries, its inspiration, and how to build your own
+- rooms/: one file per room, numbered in the order they were built (the README table has the daily-loop order); each states the question it answers, the analogy, what's on the page, the rule it carries, its inspiration, and how to build your own
+- [tools/sessions/](tools/sessions/): the one room that ships with working code: a standard-library Python compiler that reads the Claude desktop app's local session files on macOS (Codex optional), the page that shows them, an example privacy list, tests, a launchd job and a setup README. It refuses to run without a privacy list.
 
 ## Contact
 

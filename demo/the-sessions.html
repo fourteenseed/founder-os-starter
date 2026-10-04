@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Founder OS demo · The sessions</title>
+<style>
+  :root{
+    --ink:#f5f5f3; --card:#ffffff; --line:#d1d5db; --text:#0b0d10;
+    --muted:#6b7280; --accent:#d63384; --calm:#2f8f5b; --flag:#a5690f;
+    --pad: clamp(30px, 4.5vw, 48px);
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  *{ box-sizing:border-box; min-width:0; }
+  html{ background:var(--ink); }
+  body{ margin:0; font-family:var(--sans); color:var(--text); line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    padding: clamp(28px,5vw,60px) clamp(20px,5vw,56px) clamp(48px,6vw,80px); }
+  .shell{ max-width:1080px; margin:0 auto; display:flex; gap:clamp(28px,4vw,56px); align-items:flex-start; }
+  .rail{ flex:0 0 140px; font-family:var(--mono); font-size:13px; display:flex; flex-direction:column; gap:14px; padding-top:6px; }
+  .rail a{ color:var(--muted); text-decoration:none; }
+  .rail a.here{ color:var(--text); }
+  .rail .chev{ color:var(--accent); }
+  .page{ flex:1; min-width:0; max-width:920px; }
+  .panel{ background:var(--card); border:1px solid var(--line); border-radius:20px; padding:var(--pad); }
+  .panel > :first-child{ margin-top:0; } .panel > :last-child{ margin-bottom:0; }
+  .kicker{ font-family:var(--mono); font-size:12px; font-weight:600; letter-spacing:2px;
+    text-transform:uppercase; color:var(--muted); margin:0 0 18px; }
+  header{ display:flex; align-items:baseline; justify-content:space-between; gap:24px; flex-wrap:wrap; margin:0 0 clamp(36px,5vw,56px); }
+  .wordmark{ font-family:var(--mono); font-weight:600; font-size:15px; }
+  .wordmark .chev{ color:var(--accent); }
+  .os-label{ font-family:var(--mono); font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); }
+  section{ margin:0 0 clamp(36px,5vw,52px); }
+  footer{ padding:0 var(--pad); font-family:var(--mono); font-size:12.5px; color:var(--muted); }
+
+  .key{ display:flex; flex-wrap:wrap; gap:6px 18px; margin:0 0 18px; font-size:13px; color:var(--muted); }
+  .key span{ display:inline-flex; align-items:center; gap:6px; white-space:nowrap; }
+  .key b{ color:var(--text); font-weight:600; }
+  .band{ font-family:var(--mono); font-size:11.5px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase;
+    padding:7px 12px; margin:18px 0 4px; border-left:4px solid var(--bar); background:var(--bg); color:var(--fg); border-radius:2px; }
+  .band:first-of-type{ margin-top:0; }
+  .wait{ --bg:#fbe7f1; --bar:#d63384; --fg:#9c1c5c; }
+  .work{ --bg:#e6f4ec; --bar:#2f8f5b; --fg:#1f6b42; }
+  .quiet{ --bg:#eceef2; --bar:#9aa3af; --fg:#4b5563; }
+  .done{ --bg:#f0f0ee; --bar:#c7cbd1; --fg:#6b7280; }
+  .ico{ display:inline-block; width:17px; height:17px; vertical-align:-3px; line-height:0; color:var(--fg, var(--muted)); }
+  .ico svg{ width:17px; height:17px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+  .ico.solid svg{ fill:currentColor; fill-opacity:.2; }
+  .ico.soft{ opacity:.5; }
+  .row{ display:grid; grid-template-columns:28px minmax(0,1.1fr) minmax(0,1.6fr) 7em 4em 4em; gap:0 14px; align-items:start;
+    padding:9px 0; border-bottom:1px solid var(--line); font-size:13.5px; }
+  .row:last-child{ border-bottom:none; }
+  .row.act .ico svg{ fill:currentColor; fill-opacity:.2; }
+  .row .t{ font-weight:500; }
+  .row .t .kind{ color:var(--muted); font-size:12px; font-weight:400; margin-left:6px; }
+  .row .t.priv, .row .s.mut{ color:var(--muted); font-weight:400; }
+  .row .s .sub{ display:block; color:var(--muted); font-size:12px; }
+  .row .w, .row .tool, .row .age{ color:var(--muted); }
+  .row.wait .ico{ color:#9c1c5c; } .row.work .ico{ color:#1f6b42; } .row.quiet .ico{ color:#4b5563; } .row.done .ico{ color:#6b7280; }
+  .head{ display:grid; grid-template-columns:28px minmax(0,1.1fr) minmax(0,1.6fr) 7em 4em 4em; gap:0 14px;
+    font-family:var(--mono); font-size:11px; letter-spacing:1.2px; text-transform:uppercase; color:var(--muted); padding:0 0 6px; }
+  .empty{ color:var(--muted); font-size:13.5px; margin:6px 0 0; }
+  .rule{ border:1px dashed var(--line); background:transparent; }
+  .rule p{ font-size:13.5px; color:var(--muted); margin:0; line-height:1.65; }
+  @media (max-width:700px){ .row, .head{ grid-template-columns:28px 1fr; } .head span:nth-child(n+3), .row .w, .row .tool, .row .age{ display:none; } .row .s{ grid-column:2; } }
+</style></head><body><div class="shell">
+    <nav class="rail">
+    <a href="the-floor.html">The floor</a>
+    <a href="the-green.html">The green</a>
+    <a href="the-engine.html">The engine</a>
+    <a href="the-sessions.html" class="here"><span class="chev">&gt;&gt;</span> The sessions</a>
+    <a href="the-work.html">The work</a>
+    <a href="the-rota.html">The rota</a>
+    <a href="the-loops.html">The loops</a>
+    <a href="the-skills.html">The skills</a>
+    <a href="the-brain.html">The brain</a>
+    <a href="the-flow.html">The flow</a>
+    <a href="the-broadcast.html">The broadcast</a>
+    <a href="the-estate.html">The estate</a>
+    <a href="the-connection.html">The connection</a>
+  </nav>
+  <div class="page">
+    <header>
+      <div class="wordmark">sample <span class="chev">&gt;&gt;</span> studio</div>
+      <div class="os-label">Founder OS · demo</div>
+    </header>
+    <section><div class="panel">
+      <p class="kicker">The sessions · which of my sessions needs me right now</p>
+      <p class="key">
+        <span class="wait"><span class="ico solid" style="color:#9c1c5c"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2"/><path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2"/><path d="M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg></span><b>3</b> need you</span>
+        <span><span class="ico" style="color:#1f6b42"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg></span><b>2</b> working</span>
+        <span><span class="ico" style="color:#4b5563"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/></svg></span><b>1</b> open</span>
+        <span><span class="ico" style="color:#6b7280"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><b>4</b> finished (in the last 24 hours)</span>
+      </p>
+      <div class="head"><span></span><span>Session</span><span>What it says</span><span>Where</span><span>Tool</span><span>How long</span></div>
+
+      <div class="band wait">Waiting on you</div>
+      <div class="row wait act"><span class="ico" title="Needs your approval"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2"/><path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2"/><path d="M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg></span><span class="t">Harbourview proposal, second pass</span><span class="s">Wants to run the export script and needs your yes.<span class="sub">Waiting for: permission prompt</span></span><span class="w">proposals</span><span class="tool">Claude</span><span class="age">42 min</span></div>
+      <div class="row wait act"><span class="ico" title="Asked you a question"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2"/><path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2"/><path d="M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg></span><span class="t">Felix <span class="kind">scheduled</span></span><span class="s">Two competitors changed pricing this week. Which one do you want the deep read on?</span><span class="w">market-watch</span><span class="tool">Claude</span><span class="age">3 h</span></div>
+      <div class="row wait"><span class="ico soft" title="Ended asking you something"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2"/><path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2"/><path d="M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg></span><span class="t">Pilot feedback synthesis</span><span class="s">Draft done. Shall I send it to the three interviewees for a factual check?</span><span class="w">pilot</span><span class="tool">Codex</span><span class="age">2 days</span></div>
+
+      <div class="band work">Working now</div>
+      <div class="row work"><span class="ico" title="Working"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg></span><span class="t">Site visibility fixes</span><span class="s">Adding structured data to the six service pages.</span><span class="w">studio-site</span><span class="tool">Codex</span><span class="age">18 min</span></div>
+      <div class="row work"><span class="ico" title="Working"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg></span><span class="t">Juno <span class="kind">scheduled</span></span><span class="s">Reading this morning's inbox.<span class="sub">No new activity for 30 minutes or more.</span></span><span class="w">digest</span><span class="tool">Claude</span><span class="age">47 min</span></div>
+
+      <div class="band quiet">Open and quiet</div>
+      <div class="row quiet"><span class="ico" title="Open, nothing needed"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/></svg></span><span class="t priv">Private session</span><span class="s mut">Details kept private</span><span class="w">Client work</span><span class="tool">Claude</span><span class="age">5 h</span></div>
+
+      <div class="band done">Finished in the last 24 hours · 4</div>
+      <p class="empty">Folded. Open it when you want the receipts.</p>
+    </div></section>
+    <section><div class="panel rule">
+      <p><strong style="color:var(--text)">The rule of this room: it shows who is waiting, it never shows the work.</strong> One line per session, from the app's own summary where it wrote one. Private folders and keywords show only a label. The counts above are how many rows need you, not how busy you were.</p>
+    </div></section>
+    <footer><span style="color:var(--accent)">●</span> Live. Compiled 14:35, from the desktop app's own files — demo data, a fictional studio</footer>
+  </div>
+</div></body></html>

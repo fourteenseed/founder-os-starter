@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Founder OS · The sessions</title>
+<style>
+  /* The sessions: which of my AI sessions needs me right now?
+     Plain HTML. Reads sessions.json beside this file, written by compile_sessions.py.
+     Nothing on this page is built from session text except the text itself, shown as text. */
+  :root{
+    --ink:#f5f5f3; --card:#ffffff; --line:#d1d5db; --text:#0b0d10;
+    --muted:#6b7280; --accent:#d63384; --calm:#2f8f5b;
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+    --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Inter,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+  }
+  *{box-sizing:border-box;min-width:0}
+  html{background:var(--ink)}
+  body{margin:0;font-family:var(--sans);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased;padding:clamp(28px,5vw,72px) clamp(20px,5vw,56px) clamp(48px,6vw,88px)}
+  .page{max-width:1400px;margin:0 auto}
+  .sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+  header.bar{display:flex;align-items:baseline;justify-content:space-between;gap:2px 20px;flex-wrap:wrap;margin:0 0 14px}
+  .room{font-family:var(--mono);font-size:15px;font-weight:600;letter-spacing:.3px;line-height:1.4;margin:0}
+  .stamp{font-family:var(--mono);font-size:12px;color:var(--muted)}
+  .stamp.stale{color:var(--text);font-weight:600}
+  .notice{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:0 0 10px;font-size:14px;line-height:1.5;overflow-wrap:anywhere}
+  .notice.warn{border-color:var(--text);border-width:2px}
+
+  .tabs{display:flex;align-items:baseline;gap:0 8px;margin:0 0 4px;font-size:14px}
+  .tabs button{appearance:none;-webkit-appearance:none;background:none;border:0;border-radius:0;margin:0;padding:8px 3px;font:inherit;line-height:1.4;color:var(--muted);cursor:pointer}
+  .tabs button[aria-selected="true"]{color:var(--text);font-weight:600;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px}
+  .tabs button:focus-visible{outline:2px solid var(--text);outline-offset:2px}
+  .tabs .dot{color:var(--muted)}
+
+  .sec{margin:26px 0 0}
+  .lab{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);line-height:1.3;margin:0 0 4px;padding:0 0 6px;border-bottom:1px solid var(--line)}
+  /* One tint per state group, so the break points read at a glance. */
+  .lab.band{display:block;margin:0 0 2px;padding:8px 12px;border:0;border-left:4px solid var(--band-bar);border-radius:2px;background:var(--band-bg);color:var(--band-ink)}
+  summary.lab.band{display:list-item}
+  .sec-wait{--band-bg:#fbe7f1;--band-bar:#d63384;--band-ink:#9c1c5c}
+  .sec-work{--band-bg:#e6f4ec;--band-bar:#2f8f5b;--band-ink:#1f6b42}
+  .sec-quiet{--band-bg:#eceef2;--band-bar:#9aa3af;--band-ink:#4b5563}
+  .sec-done{--band-bg:#f0f0ee;--band-bar:#c7cbd1;--band-ink:#6b7280}
+  details.fold{margin:26px 0 0}
+  details.fold>summary{cursor:pointer}
+  .none{margin:8px 0 0;color:var(--muted);font-size:14px}
+
+  .list{width:100%;border-collapse:collapse;table-layout:fixed;font-size:14px;line-height:1.45}
+  .list .k-state{width:2.8em}
+  .list .k-title{width:24%}
+  .list .k-where{width:9em}
+  .list .k-tool{width:4.5em}
+  .list .k-age{width:5em}
+  .list th{font-family:var(--mono);font-size:11.5px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);text-align:left;padding:8px 14px 4px 0}
+  .list td{padding:7px 14px 7px 0;border-bottom:1px solid var(--line);vertical-align:top;overflow-wrap:anywhere}
+  .list tbody tr:last-child td{border-bottom:0}
+  /* State icons: a raised hand means it needs you. Words live in the tooltip and aria-label. */
+  .c-state,.key .ico{color:var(--band-ink,var(--muted))}
+  .ico{display:inline-block;width:18px;height:18px;vertical-align:-3px;line-height:0}
+  .ico svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  tr.act .ico svg,.key .ico.solid svg{fill:currentColor;fill-opacity:.2}
+  .ico.soft{opacity:.5}
+  .ico.spin svg{animation:spin 1.2s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @media (prefers-reduced-motion:reduce){.ico.spin svg{animation:none}}
+  .key{display:flex;flex-wrap:wrap;gap:4px 18px;margin:0 0 4px;font-size:12.5px;color:var(--muted)}
+  .key>span{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+  .key .n{font-weight:600;color:var(--text)}
+  .c-title{font-weight:500}
+  .c-title.priv,.c-says.mut{color:var(--muted);font-weight:400}
+  .c-where,.c-tool,.c-age{color:var(--muted)}
+  .kind,.sub{color:var(--muted);font-size:12.5px;font-weight:400}
+  .kind{margin-left:6px}
+  .sub{display:block}
+  .open-mac{font-family:var(--mono);font-size:12px;color:var(--muted);margin-left:8px;white-space:nowrap}
+  @media (max-width:700px){
+    .list,.list tbody{display:block}
+    .list thead,.list colgroup{display:none}
+    .list tr{display:grid;grid-template-columns:max-content max-content minmax(0,1fr) max-content;grid-template-areas:"title title title state" "says says says says" "where tool age age";row-gap:3px;padding:11px 0;border-bottom:1px solid var(--line)}
+    .list tbody tr:last-child{border-bottom:0}
+    .list td{display:block;padding:0;border:0}
+    .c-title{grid-area:title;font-size:15px;padding-right:10px}
+    .c-state{grid-area:state;text-align:right;font-size:13px}
+    .c-says{grid-area:says}
+    .c-where{grid-area:where}.c-tool{grid-area:tool}.c-age{grid-area:age}
+    .c-where,.c-tool,.c-age{font-size:12.5px}
+    .c-tool::before,.c-age::before{content:"\00b7";margin:0 .5em}
+    .c-says:empty,.c-where:empty{display:none}
+    .open-mac{display:none}
+  }
+  footer{margin-top:28px;font-family:var(--mono);font-size:12px;line-height:1.6;color:var(--muted);max-width:900px;overflow-wrap:anywhere}
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="bar">
+    <h1 class="room">The sessions</h1>
+    <span class="stamp" id="stamp" role="status" aria-live="polite">Loading&hellip;</span>
+  </header>
+  <div id="notices"></div>
+  <div id="body" hidden>
+    <div class="tabs" role="tablist" aria-label="Show sessions from">
+      <button type="button" role="tab" id="tab-all" data-tool="all" aria-selected="true" aria-controls="sections">All</button>
+      <span class="dot" aria-hidden="true">&middot;</span>
+      <button type="button" role="tab" id="tab-claude" data-tool="claude" aria-selected="false" aria-controls="sections" tabindex="-1">Claude</button>
+      <span class="dot" aria-hidden="true">&middot;</span>
+      <button type="button" role="tab" id="tab-codex" data-tool="codex" aria-selected="false" aria-controls="sections" tabindex="-1">Codex</button>
+    </div>
+    <p class="key" id="key"></p>
+    <div id="sections" role="tabpanel" aria-labelledby="tab-all">
+      <section class="sec sec-wait" aria-labelledby="h-waiting">
+        <h2 class="lab band" id="h-waiting">Waiting on you</h2>
+        <div id="waiting"></div>
+      </section>
+      <section class="sec sec-work" aria-labelledby="h-working">
+        <h2 class="lab band" id="h-working">Working now</h2>
+        <div id="working"></div>
+      </section>
+      <section class="sec sec-quiet" aria-labelledby="h-quiet">
+        <h2 class="lab band" id="h-quiet">Open and quiet</h2>
+        <div id="quiet"></div>
+      </section>
+      <details class="fold sec-done" id="fold">
+        <summary class="lab band" id="h-finished">Finished in the last 24 hours</summary>
+        <div id="finished"></div>
+      </details>
+    </div>
+  </div>
+  <footer id="foot">A scheduled job on this Mac rewrites sessions.json every few minutes. What a row says is the Claude app's own summary where it wrote one, otherwise the first sentence of the session's last message (hover a line to see which). Private sessions show only a label.</footer>
+</main>
+<script>
+(function(){
+  var DATA_URL='sessions.json', POLL_MS=60000, TICK_MS=30000, STALE_MIN=15, TAB_KEY='founder-os-sessions-tool';
+  var data=null, problem='', missing=false, tab='all', headShown=false;
+  var WORDS={needs_approval:'Needs your approval',needs_answer:'Asked you a question',waiting_other:'Waiting on you',needs_reply:'Waiting for your reply',ready_to_review:'Ready to review',stopped_mid_step:'Stopped part-way',unanswered:'Ended asking you something',unreviewed:'Ended with work to review',running:'Working',idle_open:'Open, nothing needed',finished:'Finished',unknown:'State unclear'};
+  var RANK={needs_approval:0,needs_answer:1,waiting_other:2,needs_reply:3,ready_to_review:4,stopped_mid_step:5,unanswered:6,unreviewed:7,running:8,idle_open:9,finished:10,unknown:11};
+  var WAITING={needs_approval:1,needs_answer:1,waiting_other:1,needs_reply:1,ready_to_review:1,stopped_mid_step:1,unanswered:1,unreviewed:1};
+  var ACT={needs_approval:1,needs_answer:1,waiting_other:1,needs_reply:1,ready_to_review:1};
+  var PHRASE={needs_approval:'waiting ',needs_answer:'waiting ',waiting_other:'waiting ',needs_reply:'waiting ',ready_to_review:'waiting ',running:'working for ',idle_open:'quiet for '};
+  var AGO={stopped_mid_step:'ended ',unanswered:'ended ',unreviewed:'ended ',finished:'finished '};
+  var COLS=[['k-state',''],['k-title','Session'],['k-says','What it says'],['k-where','Where'],['k-tool','Tool'],['k-age','How long']];
+  // Constant icon markup (stroke icons after Lucide, ISC licence). Never built from session data.
+  var SVG={
+    hand:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2"/><path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2"/><path d="M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg>',
+    spin:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>',
+    open:'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/></svg>',
+    done:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>',
+    unknown:'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M9.6 9.5a2.5 2.5 0 0 1 4.8.9c0 1.7-2.4 2.1-2.4 3.6"/><path d="M12 17h.01"/></svg>'
+  };
+  var ORDER=['all','claude','codex'];
+  function $(id){return document.getElementById(id)}
+  function el(tag,cls,text){var e=document.createElement(tag);if(cls)e.className=cls;if(text!=null)e.textContent=text;return e}
+  function minsSince(iso){var t=Date.parse(iso);return isNaN(t)?null:Math.max(0,(Date.now()-t)/60000)}
+  function span(m){
+    if(m<1)return 'under a minute';
+    var total=Math.round(m);
+    if(total<60)return total+' min';
+    if(m<360){var h=Math.floor(total/60),mm=total%60;return h+' h'+(mm?' '+mm+' min':'')}
+    if(m<2880)return Math.round(m/60)+' h';
+    return Math.round(m/1440)+' days';
+  }
+  function short(m){
+    if(m<1)return '<1 min';
+    var total=Math.round(m);
+    if(total<60)return total+' min';
+    if(m<2880)return Math.round(m/60)+' h';
+    return Math.round(m/1440)+' days';
+  }
+  function clock(iso){var d=new Date(iso);return isNaN(d.getTime())?'?':d.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'})}
+  function phrase(r){var m=minsSince(r.since);if(m==null)return '';var s=span(m);if(PHRASE[r.state])return PHRASE[r.state]+s;if(AGO[r.state])return AGO[r.state]+s+(m<1?'':' ago');return ''}
+  function stateIcon(r){
+    var words=WORDS[r.state]||WORDS.unknown;
+    if(r.state==='needs_approval'&&r.state_basis==='inferred')words+=' (inferred: a command that needs approval has no result yet; Codex does not record approval prompts)';
+    var k=WAITING[r.state]?'hand':r.state==='running'?'spin':r.state==='idle_open'?'open':r.state==='finished'?'done':'unknown';
+    var s=el('span','ico'+(k==='spin'?' spin':'')+(WAITING[r.state]&&!ACT[r.state]?' soft':''));
+    s.innerHTML=SVG[k];
+    s.setAttribute('role','img');s.setAttribute('aria-label',words);s.title=words;
+    return s;
+  }
+  function openLink(r){
+    var t=data&&data.open_link;
+    if(!t||r.private||r.tool!=='claude'||!/^local_[0-9a-f-]+$/i.test(r.id||'')||!/^claude:\/\//.test(t))return '';
+    return t.replace('{id}',encodeURIComponent(r.id));
+  }
+  try{var saved=window.localStorage.getItem(TAB_KEY);if(saved==='all'||saved==='claude'||saved==='codex')tab=saved}catch(e){}
+  function syncTabs(focus){
+    var bs=document.querySelectorAll('.tabs button');
+    for(var i=0;i<bs.length;i++){
+      var on=bs[i].getAttribute('data-tool')===tab;
+      bs[i].setAttribute('aria-selected',on?'true':'false');
+      bs[i].tabIndex=on?0:-1;
+      if(on&&focus)bs[i].focus();
+    }
+    $('sections').setAttribute('aria-labelledby','tab-'+tab);
+  }
+  function setTab(t,focus){
+    tab=t;
+    try{window.localStorage.setItem(TAB_KEY,t)}catch(e){}
+    syncTabs(focus);render();
+  }
+  function wireTabs(){
+    var box=document.querySelector('.tabs'),bs=box.querySelectorAll('button');
+    for(var i=0;i<bs.length;i++)bs[i].addEventListener('click',function(){setTab(this.getAttribute('data-tool'),false)});
+    box.addEventListener('keydown',function(e){
+      var i=ORDER.indexOf(tab);
+      if(e.key==='ArrowRight')setTab(ORDER[(i+1)%3],true);
+      else if(e.key==='ArrowLeft')setTab(ORDER[(i+2)%3],true);
+      else if(e.key==='Home')setTab('all',true);
+      else if(e.key==='End')setTab('codex',true);
+      else return;
+      e.preventDefault();
+    });
+  }
+  function lineOf(r){
+    var text=(r.content!=null&&r.content!=='')?r.content:(r.needs||'');
+    var app=r.content_source?r.content_source==='app':!!(text&&r.content==null);
+    return {text:text,app:app};
+  }
+  function toolName(r){var t=String(r.tool||'claude');return t==='codex'?'Codex':t.charAt(0).toUpperCase()+t.slice(1)}
+  function rowEl(r){
+    var tr=el('tr',ACT[r.state]?'act':'');
+    var st=el('td','c-state');
+    st.appendChild(stateIcon(r));
+    tr.appendChild(st);
+    var t=el('td','c-title'+(r.private?' priv':''));
+    t.appendChild(document.createTextNode(r.private?'Private session':(r.title||'Untitled session')));
+    var kind=r.private?'':(r.kind==='scheduled'?'scheduled':r.kind==='spawned'?'from another session':r.kind==='terminal'?'terminal':'');
+    if(kind){var k=el('span','kind',kind);if(r.kind==='scheduled'&&r.task)k.title='Scheduled task: '+r.task;t.appendChild(document.createTextNode(' '));t.appendChild(k)}
+    var href=openLink(r);
+    if(href){var a=el('a','open-mac','Open on Mac');a.href=href;a.rel='noopener';t.appendChild(document.createTextNode(' '));t.appendChild(a)}
+    tr.appendChild(t);
+    var s=el('td','c-says');
+    if(r.private){s.className+=' mut';s.textContent='Details kept private'}
+    else{
+      var ln=lineOf(r);
+      if(ln.text){s.textContent=ln.text;s.title=ln.app?"The app's summary":"From the session's last message"}
+      if(r.waiting_for)s.appendChild(el('span','sub',(r.state==='unknown'?'The app reported: ':'Waiting for: ')+r.waiting_for));
+      if(r.maybe_stuck)s.appendChild(el('span','sub','No new activity for 30 minutes or more.'));
+    }
+    tr.appendChild(s);
+    tr.appendChild(el('td','c-where',r.private?(r.label||'Private'):(r.project||'')));
+    tr.appendChild(el('td','c-tool',toolName(r)));
+    var m=minsSince(r.since),ag=el('td','c-age',m==null?'':short(m)),ph=phrase(r);
+    if(ph)ag.title=ph;
+    tr.appendChild(ag);
+    return tr;
+  }
+  function table(rows,label,showHead){
+    var t=el('table','list');t.setAttribute('aria-label',label);
+    var cg=el('colgroup');COLS.forEach(function(c){cg.appendChild(el('col',c[0]))});t.appendChild(cg);
+    var th=el('thead',showHead?'':'sr'),hr=el('tr');
+    COLS.forEach(function(c){var h=el('th',null,c[1]);h.scope='col';hr.appendChild(h)});
+    th.appendChild(hr);t.appendChild(th);
+    var tb=el('tbody');rows.forEach(function(r){tb.appendChild(rowEl(r))});t.appendChild(tb);
+    return t;
+  }
+  function fill(id,rows,empty,label){
+    var box=$(id);box.textContent='';
+    if(!rows.length){box.appendChild(el('p','none',empty));return}
+    box.appendChild(table(rows,label,!headShown));headShown=true;
+  }
+  function rank(r){return RANK[r.state]!=null?RANK[r.state]:99}
+  function oldestFirst(a,b){var d=(Date.parse(a.since)||0)-(Date.parse(b.since)||0);return d||rank(a)-rank(b)}
+  function newestFirst(a,b){var d=(Date.parse(b.last_activity)||0)-(Date.parse(a.last_activity)||0);return d||rank(a)-rank(b)}
+  function note(text,warn){return el('p','notice'+(warn?' warn':''),text)}
+  // The key: one count per group, taken from the same arrays that fill the sections. These are not activity counts;
+  // they tell you how many rows are waiting on you, which is the question this room answers.
+  function showCounts(c,hours,days){
+    var key=$('key');key.textContent='';
+    var items=[
+      ['sec-wait','hand',' solid',c.waiting,c.waiting===1?'needs you':'need you','Needs you. Tinted: waiting on you right now (an approval, a question or a reply). Paler: ended asking you something, or with work to review, kept for '+days+' days.'],
+      ['sec-work','spin','',c.working,'working',''],
+      ['sec-quiet','open','',c.open,'open',''],
+      ['sec-done','done','',c.finished,'finished (in the last '+hours+' hours)','']
+    ];
+    items.forEach(function(it,n){
+      var s=el('span',it[0]),i=el('span','ico'+it[2]);
+      if(n)s.appendChild(el('span','sr',' · '));
+      i.innerHTML=SVG[it[1]];
+      if(it[5])i.title=it[5];
+      s.appendChild(i);s.appendChild(el('b','n',String(it[3])));s.appendChild(document.createTextNode(' '+it[4]));
+      key.appendChild(s);
+    });
+    $('h-finished').textContent='Finished in the last '+hours+' hours · '+c.finished;
+  }
+  function setStamp(text,stale){var s=$('stamp');s.textContent=text;s.className='stamp'+(stale?' stale':'')}
+  function render(){
+    var notes=$('notices'),body=$('body');
+    notes.textContent='';
+    if(missing){setStamp('Not compiled yet',true);body.hidden=true;notes.appendChild(note('There is no sessions.json beside this page yet. Run compile_sessions.py once and reload.'));return}
+    if(!data){setStamp(problem?'Could not load':'Loading…',!!problem);body.hidden=true;if(problem)notes.appendChild(note('Could not load sessions.json ('+problem+'). If you opened this page as a file, serve the folder instead: see start-here/running-it-locally.md.',true));return}
+    body.hidden=false;
+    var age=minsSince(data.generated_at);
+    var stale=age==null||age>STALE_MIN;
+    setStamp((stale?'Snapshot · ':'Live · ')+'compiled '+clock(data.generated_at),stale);
+    if(stale)notes.appendChild(note('This copy is old. The compile last ran at '+clock(data.generated_at)+', so it may not match what is on this Mac now. Check the scheduled job is loaded.',true));
+    if(problem)notes.appendChild(note('Could not refresh just now ('+problem+'). Showing the copy from '+clock(data.generated_at)+'.',true));
+    var sv=Number(data.schema);
+    if(data.schema!=null&&!(sv>=1&&sv<=3))notes.appendChild(note('This file is in a newer format (version '+data.schema+') than this page knows. Some columns may be missing.'));
+    var inp=data.inputs||{};
+    if(inp.claude_registry&&inp.claude_registry.ok===false)notes.appendChild(note('The compile could not read which Claude sessions are open, so waiting and working states may be missing.'));
+    if(inp.claude_desktop&&inp.claude_desktop.ok===false)notes.appendChild(note('The compile could not read the Claude desktop app’s session files, so the list may be missing sessions.'));
+    var bad=0;Object.keys(inp).forEach(function(k){if(inp[k]&&inp[k].bad)bad+=inp[k].bad});
+    if(bad)notes.appendChild(note('Some session files could not be read just now.'));
+    var keeps=data.keeps||{},hours=keeps.finished_hours||24,days=keeps.ended_asking_days||7;
+    var rows=(data.sessions||[]).filter(function(r){return tab==='all'||r.tool===tab});
+    var waiting=[],working=[],open=[],done=[];
+    rows.forEach(function(r){
+      if(WAITING[r.state])waiting.push(r);
+      else if(r.state==='running')working.push(r);
+      else if(r.state==='finished'){var m=minsSince(r.last_activity);if(m==null||m<=hours*60)done.push(r)}
+      else open.push(r);
+    });
+    headShown=false;
+    showCounts({waiting:waiting.length,working:working.length,open:open.length,finished:done.length},hours,days);
+    fill('waiting',waiting.sort(function(a,b){var t=(ACT[a.state]?0:1)-(ACT[b.state]?0:1);return t||oldestFirst(a,b)}),'Nothing is waiting on you.','Waiting on you');
+    fill('working',working.sort(oldestFirst),'Nothing is running.','Working now');
+    fill('quiet',open.sort(newestFirst),'No sessions are open and quiet.','Open and quiet');
+    fill('finished',done.sort(newestFirst),'Nothing finished in the last '+hours+' hours.','Finished in the last '+hours+' hours');
+    var codexNote=(inp.codex&&inp.codex.ok===false)?' Codex is not set up on this Mac, so the Codex tab is empty.':'';
+    $('foot').textContent='A scheduled job on this Mac rewrites sessions.json every few minutes. Finished sessions stay for '+hours+' hours. Sessions that ended asking you something stay for '+days+' days. What a row says is the Claude app’s own summary where it wrote one, otherwise the first sentence of the session’s last message (hover a line to see which). Private sessions show only a label.'+codexNote;
+  }
+  function load(){
+    fetch(DATA_URL,{cache:'no-store'}).then(function(r){
+      if(r.status===404){missing=true;data=null;problem='';return null}
+      if(!r.ok)throw new Error('HTTP '+r.status);
+      return r.json();
+    }).then(function(j){
+      if(j!==null){
+        if(!j||typeof j!=='object'||!Array.isArray(j.sessions))throw new Error('unexpected file');
+        missing=false;data=j;problem='';
+      }
+      render();
+    }).catch(function(e){problem=(e&&e.message)||'no connection';render()});
+  }
+  wireTabs();syncTabs(false);
+  render();load();
+  setInterval(load,POLL_MS);
+  setInterval(render,TICK_MS);
+  document.addEventListener('visibilitychange',function(){if(!document.hidden)load()});
+})();
+</script>
+</body>
+</html>

@@ -8,3 +8,7 @@ __pycache__/
 *.log
 private/
 .local/
+
+# The sessions room keeps its private list and compiled output local
+tools/sessions/private.json
+tools/sessions/sessions.json

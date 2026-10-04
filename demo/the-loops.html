@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Founder OS demo · The loops</title>
+<style>
+  :root{
+    --ink:#f5f5f3; --card:#ffffff; --line:#d1d5db; --text:#0b0d10;
+    --muted:#6b7280; --accent:#d63384; --calm:#2f8f5b; --flag:#a5690f;
+    --pad: clamp(30px, 4.5vw, 48px);
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  *{ box-sizing:border-box; min-width:0; }
+  html{ background:var(--ink); }
+  body{ margin:0; font-family:var(--sans); color:var(--text); line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    padding: clamp(28px,5vw,60px) clamp(20px,5vw,56px) clamp(48px,6vw,80px); }
+  .shell{ max-width:1080px; margin:0 auto; display:flex; gap:clamp(28px,4vw,56px); align-items:flex-start; }
+  .rail{ flex:0 0 140px; font-family:var(--mono); font-size:13px; display:flex; flex-direction:column; gap:14px; padding-top:6px; }
+  .rail a{ color:var(--muted); text-decoration:none; }
+  .rail a.here{ color:var(--text); }
+  .rail .chev{ color:var(--accent); }
+  .page{ flex:1; min-width:0; max-width:920px; }
+  .panel{ background:var(--card); border:1px solid var(--line); border-radius:20px; padding:var(--pad); }
+  .panel > :first-child{ margin-top:0; } .panel > :last-child{ margin-bottom:0; }
+  .kicker{ font-family:var(--mono); font-size:12px; font-weight:600; letter-spacing:2px;
+    text-transform:uppercase; color:var(--muted); margin:0 0 18px; }
+  header{ display:flex; align-items:baseline; justify-content:space-between; gap:24px; flex-wrap:wrap; margin:0 0 clamp(36px,5vw,56px); }
+  .wordmark{ font-family:var(--mono); font-weight:600; font-size:15px; }
+  .wordmark .chev{ color:var(--accent); }
+  .os-label{ font-family:var(--mono); font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); }
+  section{ margin:0 0 clamp(36px,5vw,52px); }
+  footer{ padding:0 var(--pad); font-family:var(--mono); font-size:12.5px; color:var(--muted); }
+
+  .lede{ font-size:17px; margin:0 0 6px; }
+  .lede + p{ color:var(--muted); font-size:14px; margin:0; }
+  .loop{ margin-top:14px; }
+  .loop .top{ display:flex; align-items:baseline; justify-content:space-between; gap:12px 18px; flex-wrap:wrap; }
+  .loop h3{ font-size:18px; font-weight:650; margin:0; }
+  .loop .about{ color:var(--muted); font-size:14px; margin:6px 0 14px; }
+  .pill{ font-family:var(--mono); font-size:11px; border:1px solid var(--line); border-radius:999px; padding:4px 12px; color:var(--muted); flex:none; }
+  .pill.on{ border-color:var(--calm); color:var(--calm); }
+  .pill.build{ border-color:var(--flag); color:var(--flag); }
+  .facts{ display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px 18px; font-size:13.5px; margin:0 0 16px; padding:0; list-style:none; }
+  .facts li b{ display:block; font-family:var(--mono); font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .facts li.gate b{ color:var(--accent); }
+  .steps{ margin:0; padding:0; list-style:none; border-top:1px solid var(--line); }
+  .steps li{ display:grid; grid-template-columns:2.2em minmax(0,13em) 1fr; gap:0 14px; padding:9px 0; border-bottom:1px solid var(--line); font-size:13.5px; }
+  .steps .n{ font-family:var(--mono); color:var(--muted); }
+  .steps .who{ font-weight:600; }
+  .steps .who span{ color:var(--muted); font-weight:400; display:block; font-size:12.5px; }
+  .steps li.human .who{ color:var(--accent); }
+  .steps li.human .who span{ color:var(--accent); opacity:.8; }
+  .rule{ border:1px dashed var(--line); background:transparent; }
+  .rule p{ font-size:13.5px; color:var(--muted); margin:0; line-height:1.65; }
+  @media (max-width:640px){ .steps li{ grid-template-columns:2.2em 1fr; } .steps li .what{ grid-column:2; } }
+</style></head><body><div class="shell">
+    <nav class="rail">
+    <a href="the-floor.html">The floor</a>
+    <a href="the-green.html">The green</a>
+    <a href="the-engine.html">The engine</a>
+    <a href="the-sessions.html">The sessions</a>
+    <a href="the-work.html">The work</a>
+    <a href="the-rota.html">The rota</a>
+    <a href="the-loops.html" class="here"><span class="chev">&gt;&gt;</span> The loops</a>
+    <a href="the-skills.html">The skills</a>
+    <a href="the-brain.html">The brain</a>
+    <a href="the-flow.html">The flow</a>
+    <a href="the-broadcast.html">The broadcast</a>
+    <a href="the-estate.html">The estate</a>
+    <a href="the-connection.html">The connection</a>
+  </nav>
+  <div class="page">
+    <header>
+      <div class="wordmark">sample <span class="chev">&gt;&gt;</span> studio</div>
+      <div class="os-label">Founder OS · demo</div>
+    </header>
+    <section><div class="panel">
+      <p class="kicker">The loops · what keeps running without me</p>
+      <p class="lede">A library of the things that keep moving.</p>
+      <p>Loops are the repeatable jobs that run through the campus, with a human decision still visible at the end. This is where to find what is active, what happens next, and how to ask for a change.</p>
+    </div></section>
+
+    <section><div class="panel loop">
+      <div class="top"><h3>Newsletter loop</h3><span class="pill on">active</span></div>
+      <p class="about">A four-day editorial loop for one useful, current post: drafted, illustrated, sent to you for review, then published only when you approve it.</p>
+      <ul class="facts">
+        <li><b>Next run</b>Monday · 09:00</li>
+        <li><b>Owner</b>you · the studio</li>
+        <li class="gate"><b>Human gate</b>Review and publish</li>
+      </ul>
+      <ol class="steps">
+        <li><span class="n">01</span><span class="who">Piet<span>Claude, scheduled task</span></span><span class="what">Finds a timely angle and writes the unpublished draft.</span></li>
+        <li><span class="n">02</span><span class="who">Codex<span>illustration</span></span><span class="what">Creates a cover in the newsletter's established style.</span></li>
+        <li><span class="n">03</span><span class="who">Mailer<span>review email</span></span><span class="what">Sends you the private preview and three clear actions: approve, change, drop.</span></li>
+        <li class="human"><span class="n">04</span><span class="who">You<span>approval</span></span><span class="what">Read it, ask for a change, or publish. Nothing goes out until you do.</span></li>
+      </ol>
+    </div></section>
+
+    <section><div class="panel loop">
+      <div class="top"><h3>Site watch loop</h3><span class="pill on">active</span></div>
+      <p class="about">A weekly check that the public site is in good order for people and for agents, with fixes proposed as cards rather than made silently.</p>
+      <ul class="facts">
+        <li><b>Next run</b>Sunday · 06:30</li>
+        <li><b>Owner</b>you · the studio</li>
+        <li class="gate"><b>Human gate</b>Approve each fix before deploy</li>
+      </ul>
+      <ol class="steps">
+        <li><span class="n">01</span><span class="who">Otis<span>Claude, scheduled task</span></span><span class="what">Crawls the site, checks structured data, broken links and the agent-facing files.</span></li>
+        <li><span class="n">02</span><span class="who">Otis<span>engine</span></span><span class="what">Writes one card per finding on the task board, with the proof attached.</span></li>
+        <li><span class="n">03</span><span class="who">Codex<span>builder</span></span><span class="what">Claims an approved card, makes the fix on a branch, leaves a receipt.</span></li>
+        <li class="human"><span class="n">04</span><span class="who">You<span>deploy</span></span><span class="what">Review the branch and deploy. Deploy is a signature door.</span></li>
+      </ol>
+    </div></section>
+
+    <section><div class="panel loop">
+      <div class="top"><h3>Follow-ups loop</h3><span class="pill build">building</span></div>
+      <p class="about">A twice-weekly pass over conversations that have gone quiet, producing suggested replies you can send or bin. Not yet trusted to run unattended.</p>
+      <ul class="facts">
+        <li><b>Next run</b>not scheduled yet</li>
+        <li><b>Owner</b>you · the studio</li>
+        <li class="gate"><b>Human gate</b>Every message is yours to send</li>
+      </ul>
+      <ol class="steps">
+        <li><span class="n">01</span><span class="who">Nell<span>Claude, scheduled task</span></span><span class="what">Reads the inbox and the meeting notes for threads that need a nudge.</span></li>
+        <li><span class="n">02</span><span class="who">Nell<span>draft</span></span><span class="what">Drafts one suggested reply per thread, with the reason it thinks a reply is due.</span></li>
+        <li class="human"><span class="n">03</span><span class="who">You<span>send</span></span><span class="what">Send, edit or bin each one. Nell never sends.</span></li>
+      </ol>
+    </div></section>
+
+    <section><div class="panel rule">
+      <p><strong style="color:var(--text)">How to change one: use its name.</strong> Share this page with the person or agent doing the work and say "update the newsletter loop". This page is a register written for humans, not the scheduler itself; the schedule lives in the rota, the runs leave receipts on the board.</p>
+    </div></section>
+    <footer>Register compiled Monday 3 August · a manual snapshot, and it says so — demo data, a fictional studio</footer>
+  </div>
+</div></body></html>
