@@ -1,0 +1,15 @@
+{
+  "_about": "Copy this file to private.json beside compile_sessions.py and edit it. A session is private if its folder is under one of private_folders, or if its title, task name, summary line or folder contains one of the keywords (case does not matter) or one of the names (whole word). A private row shows only the label, the state and the times. The compiler refuses to run if this list is missing or empty, so there is never an unredacted copy by accident. Keep private.json out of any public repository; the .gitignore in this repo already lists it.",
+  "default_label": "Private",
+  "private_folders": [
+    {"path": "~/clients/acme", "label": "Client work"},
+    {"path": "~/personal", "label": "Personal"}
+  ],
+  "keywords": [
+    {"match": "acme", "label": "Client work"},
+    {"match": "payroll", "label": "Finance"},
+    {"match": "mortgage", "label": "Personal"},
+    {"match": "medical", "label": "Personal"}
+  ],
+  "names": ["Alex", "Sam"]
+}
