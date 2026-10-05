@@ -26,7 +26,7 @@ The whole analogy also exists as a single machine-readable file, [campus.yaml](c
 
 ## What it looks like
 
-Three of the rooms, with demo data for a fictional studio. The pages themselves are in [demo/](demo/): download the repo and open them in any browser, nothing to install.
+Four of the rooms, with demo data for a fictional studio. The pages themselves are in [demo/](demo/): download the repo and open them in any browser, nothing to install.
 
 **The floor**: did my agents show up today? The next move at the top, one line from the chief of staff, and every agent at a named desk with an honest last-ran read.
 
@@ -39,6 +39,10 @@ Three of the rooms, with demo data for a fictional studio. The pages themselves 
 **The engine**: what waits on a human, what's in motion, and receipts for what the agents proved. It points at the real task board; it never duplicates it.
 
 ![The engine](assets/demo-the-engine.png)
+
+**The sessions**: which of my AI sessions needs me right now? One row per open session across tools, a raised hand on anything stuck at a prompt or a question, and a label only for anything on the privacy list.
+
+![The sessions](assets/demo-the-sessions.png)
 
 ## The rooms at a glance
 
@@ -78,11 +82,17 @@ Every room obeys the same [honesty rules](principles/honesty-rules.md), and they
 
 ## Where it came from
 
-Built in the open in Cornwall, mostly by talking to an agent over a couple of days, standing on the shoulders of people who shared their working generously. The concepts this borrows and what was changed are credited properly in [principles/credits.md](principles/credits.md): Nate B. Jones's Open Brain, Open Skills, and Open Engine; Ankit Patel's architecture thinking; and the Exec Circle community around them. The campus metaphor, the honesty rules, and the green are the parts I'd claim as mine.
+Built in the open in Cornwall, mostly by talking to an agent over a couple of days, standing on the shoulders of people who shared their working generously. The concepts this borrows and what was changed are credited properly in [principles/credits.md](principles/credits.md): Nate B. Jones's Open Brain, Open Skills, and Open Engine; Ankit Patel's architecture thinking; and the Exec Circle community around them. Mark Bunce and ashton-papi gave it the manifest and the confidence words within a day of it going public. The sessions room started with Limited Edition Jonathan, from Nate's WhatsApp group, and the session board plugin he was building; I borrowed the idea rather than the tool. The campus metaphor, the honesty rules, and the green are the parts I'd claim as mine.
 
 ## Feeding back
 
 This repo exists because people shared their working, so the same applies here. If something is unclear, wrong, or missing, open an issue and say so plainly; blunt is welcome. If you build your own corner, I'd genuinely like to see it, and with your permission I'll link a small gallery of other people's versions here so the map keeps travelling. wendy@fourteenseed.com
+
+## Changes
+
+- **5 October 2026.** The sessions and the loops rooms, with the sessions shipping as working code, and a note on how the green became the week.
+- **4 July 2026.** The contract layer: the campus manifest, the six confidence words and the proof gates, from Mark Bunce's and ashton-papi's feedback.
+- **3 July 2026.** First public version: eleven rooms, the campus, the honesty rules, and demo pages for the fictional studio.
 
 Wendy Harris, Fourteen Seed
 Cornwall >> internet

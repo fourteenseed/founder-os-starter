@@ -29,6 +29,12 @@ Both arrived within a day of this repo going public, from different directions, 
 
 **What changed:** their advice arrived as six suggestions; three went in. Receipts already had a template, the source-of-truth register folded into the manifest rather than becoming its own file, and dashboard-sprawl protection was already rule-shaped. The first version of this OS died of complication; saying no to good ideas is part of the pattern.
 
+## Limited Edition Jonathan: the sessions room
+
+Jonathan, in Nate's WhatsApp group, was building a session board plugin: one place to see every AI session you have open and which ones are stuck. Seeing it was the moment the sessions room became obvious. I didn't install his plugin; I borrowed the question it answers and built the plainest version I could from the files the Claude desktop app already writes, with no model calls and a privacy list it won't run without.
+
+**What changed:** the board became a list with four bands, the raised hand is the app's own signal, and the whole thing is a Python script on a five-minute schedule. The idea is his; the restraint is the house style.
+
 ## What's original here
 
 The campus metaphor as a whole (buildings, colleagues, keycards, the gatehouse, the pillars), the honesty rules as written, the green (a room that protects the human, with a charter the system obeys), agents named as people on a floor, and the insistence that every page can say "I don't know".
