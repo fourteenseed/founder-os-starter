@@ -8,7 +8,7 @@ The workshop companion site tells the same story room by room, with screenshots:
 
 ## Structure
 
-- [README.md](README.md): the human front door: who this is for and how to use it
+- [README.md](README.md): the human front door: who this is for and how to use it, with a dated list of changes at the bottom
 - [AGENTS.md](AGENTS.md): instructions for the agent a visitor points at this repo
 - [campus.yaml](campus.yaml): the machine-readable campus manifest template: buildings, agents, keycards, signature doors, rooms, sources of truth, receipts, and the six-word confidence vocabulary
 - [principles/the-campus.md](principles/the-campus.md): the operating analogy: buildings, colleagues, keycards, the gatehouse, the pillars, the green
